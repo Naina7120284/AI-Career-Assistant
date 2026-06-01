@@ -1,0 +1,25 @@
+# Node.js
+node_modules/
+.next/
+
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Environment files
+.env
+.env.local
+
+# Logs
+*.log
+
+# VS Code
+.vscode/
+
+# Uploads
+uploads/
+
+# Build files
+dist/
+build/
