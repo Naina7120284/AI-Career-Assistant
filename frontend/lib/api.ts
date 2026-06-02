@@ -1,6 +1,6 @@
 export function apiBaseUrl(): string {
   // Prefer env so deployment works; fall back to local backend.
-  return (process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000").replace(/\/$/, "");
+  return (process.env.NEXT_PUBLIC_API_URL || "http://localhost:8001").replace(/\/$/, "");
 }
 
 export function apiUrl(path: string): string {

@@ -14,6 +14,7 @@ import { AdvancedVoiceChat } from '@/components/AdvancedVoiceChat';
 import { ResumeDashboard } from '@/components/ResumeDashboard';
 import { BlurGate } from '@/components/BlurGate';
 import { useUser } from '@/hooks/useUser';
+import { apiUrl } from '@/lib/api';
  
 export default function Home() {
   const [hasResume,  setHasResume]  = useState(false);
@@ -54,7 +55,7 @@ const fetchLatestResume = async () => {
   try {
 
     const response = await fetch(
-      `http://127.0.0.1:8001/api/v1/resume/latest?user_id=${user.id}`
+       apiUrl(`/api/v1/resume/latest?user_id=${user?.id}`)
     )
 
     const data = await response.json()

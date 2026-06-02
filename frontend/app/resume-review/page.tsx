@@ -10,6 +10,7 @@ from '@/components/ResumeDashboard'
 
 import { useUser }
 from '@/hooks/useUser'
+import { apiUrl } from '@/lib/api'
 
 export default function ResumeReviewPage() {
 
@@ -47,7 +48,7 @@ export default function ResumeReviewPage() {
     try {
 
       const response = await fetch(
-        `http://127.0.0.1:8001/api/v1/resume/latest?user_id=${user?.id}`
+        apiUrl(`/api/v1/resume/latest?user_id=${user?.id}`)
       )
 
       const data = await response.json()
