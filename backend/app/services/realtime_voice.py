@@ -288,6 +288,7 @@ class VoiceConversation:
                     voice_name = "en-US-JennyNeural"
 
             print("🗣️ USING:", voice_name)
+            print("STEP 1")
 
             # =========================
             # GENERATE TTS
@@ -297,6 +298,8 @@ class VoiceConversation:
                 text=text,
                 voice=voice_name
             )
+
+            print("STEP 2")
 
             temp_file = tempfile.NamedTemporaryFile(
                 delete=False,
@@ -308,6 +311,8 @@ class VoiceConversation:
             temp_file.close()
 
             await communicate.save(temp_path)
+
+            print("STEP 3")
 
             # interrupted
             if self.stop_speaking:
