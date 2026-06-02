@@ -36,7 +36,8 @@ app = FastAPI(
 # We define the origins clearly to ensure the 403 error is resolved
 origins = [
     "http://localhost:3000",
-    "http://127.0.0.1:3000",
+    "http://127.0.0.1:8001",
+    "https://ai-career-assistant-1-9nbp.onrender.com",
 ]
 
 app.add_middleware(
