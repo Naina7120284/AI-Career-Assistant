@@ -1,5 +1,5 @@
+from app.db.supabase_client import supabase
 from fastapi import APIRouter
-from httpcore import request
 from pydantic import BaseModel
 from typing import List, Optional
 from groq import Groq
@@ -51,8 +51,8 @@ def get_resume_content(user_id: str) -> str:
 
 @router.post("/ask")
 async def ask_question(request: ChatRequest) -> ChatResponse:
-    """REAL AI Career Assistant using Groq with Resume Context"""
     
+    print("🔥 CHAT ROUTE VERSION 2 LOADED 🔥")
     print(f"📝 User question: {request.message}")
     
     # Get resume content from database
@@ -207,6 +207,28 @@ IMPORTANT:
 
         ai_response = response.choices[0].message.content
 
+        try:
+            # Save user message
+            supabase.table("chats").insert({
+                "user_id": request.user_id,
+                "session_id": request.session_id or "default",
+                "role": "user",
+                "content": request.message
+            }).execute()
+
+            # Save AI response
+            supabase.table("chats").insert({
+                "user_id": request.user_id,
+                "session_id": request.session_id or "default",
+                "role": "assistant",
+                "content": ai_response
+            }).execute()
+
+            print("✅ Chat saved to Supabase")
+
+        except Exception as db_error:
+            print(f"❌ Chat save failed: {db_error}")
+
         print(f"✅ AI response generated ({len(ai_response)} characters)")
 
         return ChatResponse(
@@ -223,3 +245,5 @@ IMPORTANT:
             sources=[],
             is_safe=True
         )
+
+    
