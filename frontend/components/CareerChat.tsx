@@ -607,35 +607,63 @@ export default function CareerChat() {
         )}
  
         {/* Input Bar */}
-        <div className="flex items-center gap-1 sm:gap-2 bg-slate-100 rounded-full px-2 sm:px-4 py-1 border border-slate-200 overflow-hidden">
- 
-          <button
-  onClick={startDictation}
-  className={`p-2 shrink-0 transition-all ${
-    isDictating
-      ? 'text-red-500 scale-125'
-      : 'text-slate-400 hover:text-slate-600'
-  }`}
->
-  <Mic size={18} />
-</button>
+       <div className="flex items-center gap-1 sm:gap-2 bg-slate-100 rounded-full px-2 sm:px-4 py-1 border border-slate-200 w-full">
+  
+  <button
+    onClick={() => setShowPlusMenu(!showPlusMenu)}
+    className={`p-2 shrink-0 rounded-full transition-colors ${
+      showPlusMenu
+        ? 'text-indigo-600 bg-indigo-50'
+        : 'text-slate-400 hover:text-slate-600'
+    }`}
+  >
+    <Plus size={18} />
+  </button>
 
-<button
-  onClick={() => setIsConversing(true)}
-  className="p-2 shrink-0 text-slate-400 hover:text-indigo-600"
->
-  <AudioLines size={18} />
-</button>
+  <input
+    type="text"
+    value={inputText}
+    onChange={(e) => setInputText(e.target.value)}
+    onKeyDown={(e) => e.key === 'Enter' && handleSendMessage()}
+    placeholder={
+      pendingImage
+        ? 'Ask something about this image...'
+        : 'Message Career Assistant...'
+    }
+    className="flex-1 min-w-0 bg-transparent border-none outline-none py-3 text-sm text-slate-700"
+  />
 
-{(inputText.trim() || pendingImage) && (
+  <button
+    onClick={startDictation}
+    className={`p-2 shrink-0 transition-all ${
+      isDictating
+        ? 'text-red-500 scale-125'
+        : 'text-slate-400 hover:text-slate-600'
+    }`}
+  >
+    <Mic size={18} />
+  </button>
+
+  <button
+    onClick={() => setIsConversing(true)}
+    className="p-2 shrink-0 text-slate-400 hover:text-indigo-600"
+  >
+    <AudioLines size={18} />
+  </button>
+
   <button
     onClick={handleSendMessage}
-    className="p-2 shrink-0 rounded-full text-indigo-600 hover:scale-110 transition-all"
+    disabled={!inputText.trim() && !pendingImage}
+    className={`p-2 shrink-0 rounded-full transition-all ${
+      !inputText.trim() && !pendingImage
+        ? 'text-slate-300'
+        : 'text-indigo-600 hover:scale-110'
+    }`}
   >
     <Send size={18} />
   </button>
-)}
-        </div>
+
+</div>
       </div>
     </div>
   );
