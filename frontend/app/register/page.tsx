@@ -109,14 +109,14 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[linear-gradient(180deg,#F8FAFF_0%,#F6F8FF_45%,#FFF8EC_100%)] relative overflow-hidden flex items-center justify-center px-6 py-10">
+    <div className="min-h-screen bg-[linear-gradient(180deg,#F8FAFF_0%,#F6F8FF_45%,#FFF8EC_100%)] relative overflow-hidden flex items-center justify-center px-4 py-6">
 
       {/* OUTER GLOW */}
-      <div className="absolute top-[-100px] left-[-100px] w-[420px] h-[320px] bg-[#EAF3FF] rounded-full blur-3xl opacity-70" />
+      <div className="absolute top-[-100px] left-[-100px] w-[340px] h-[260px] bg-[#EAF3FF] rounded-full blur-3xl opacity-70" />
 
-      <div className="absolute bottom-[-120px] right-[-100px] w-[520px] h-[360px] bg-[#FFF1BF] rounded-full blur-3xl opacity-70" />
+      <div className="absolute bottom-[-120px] right-[-100px] w-[420px] h-[300px] bg-[#FFF1BF] rounded-full blur-3xl opacity-70" />
 
-      <div className="relative z-10 w-full max-w-5xl bg-white/85 backdrop-blur-xl rounded-[38px] overflow-hidden shadow-[0_20px_80px_rgba(80,90,140,0.08)] grid grid-cols-1 lg:grid-cols-2">
+      <div className="relative z-10 w-full max-w-4xl bg-white/85 backdrop-blur-xl rounded-[28px] overflow-hidden shadow-[0_20px_80px_rgba(80,90,140,0.08)] grid grid-cols-1 lg:grid-cols-2">
 
         {/* LEFT PANEL */}
         <div className="relative overflow-hidden border-r border-[#EEF2FF]">
@@ -132,17 +132,17 @@ export default function RegisterPage() {
           <div className="absolute inset-0 bg-white/10 backdrop-blur-[1px]" />
 
           {/* CONTENT */}
-          <div className="relative z-10 px-10 pt-12 h-full flex flex-col">
+          <div className="relative z-10 px-8 pt-8 h-full flex flex-col">
 
-            <h1 className="text-[42px] font-black text-[#111827] leading-tight">
-              Welcome Back! 👋
+            <h1 className="text-[26px] font-black text-[#111827] leading-tight">
+              Welcome!
             </h1>
 
-            <p className="mt-4 text-[#6B7280] text-[16px] leading-7 max-w-md">
+            <p className="mt-2 text-[#6B7280] text-[14px] leading-6 max-w-md">
               Sign in or create an account to continue your career growth journey.
             </p>
 
-            <div className="mt-10 space-y-5">
+            <div className="mt-5 space-y-3">
               {[
                 'AI-powered career guidance',
                 'Smart resume analysis',
@@ -153,7 +153,7 @@ export default function RegisterPage() {
                   key={item}
                   className="flex items-center gap-4"
                 >
-                  <div className="w-6 h-6 rounded-full bg-[#FFD95A] flex items-center justify-center shadow-sm">
+                  <div className="w-5 h-5 rounded-full bg-[#FFD95A] flex items-center justify-center shadow-sm">
                     <svg
                       width="10"
                       height="8"
@@ -170,7 +170,7 @@ export default function RegisterPage() {
                     </svg>
                   </div>
 
-                  <span className="text-[#4B5563] font-medium text-[15px]">
+                  <span className="text-[#4B5563] font-medium text-[14px]">
                     {item}
                   </span>
                 </div>
@@ -178,33 +178,33 @@ export default function RegisterPage() {
             </div>
 
             {/* ROBOT IMAGE */}
-            <div className="relative flex-1 flex items-end justify-center mt-8">
+            <div className="relative flex-1 flex items-center justify-center mt-8">
 
               <img
                 src="/robo.png"
                 alt="robot"
-                className="w-[430px] max-w-full object-contain drop-shadow-[0_20px_40px_rgba(80,90,180,0.12)]"
+                className="w-[340px] max-w-full object-contain drop-shadow-[0_20px_40px_rgba(80,90,180,0.12)]"
               />
             </div>
           </div>
         </div>
 
         {/* RIGHT PANEL */}
-        <div className="px-10 py-12 flex flex-col justify-center bg-white/70 backdrop-blur-md">
+        <div className="px-6 py-6 flex flex-col justify-center bg-white/70 backdrop-blur-md">
 
-          <h2 className="text-[34px] font-black text-[#111827]">
+          <h2 className="text-[20px] font-black text-[#111827]">
             Create your account
           </h2>
 
-          <p className="text-[#6B7280] mt-2">
+          <p className="text-[#6B7280] text-[14px] mt-2">
             Enter your details to get started
           </p>
 
           {success ? (
             <div className="flex flex-col items-center justify-center py-20">
-              <div className="text-6xl mb-5">🎉</div>
+              <div className="text-5xl mb-5">🎉</div>
 
-              <h2 className="text-2xl font-black text-[#111827] text-center">
+              <h2 className="text-xl font-black text-[#111827] text-center">
                 Account Created!
               </h2>
 
@@ -219,7 +219,7 @@ export default function RegisterPage() {
                 type="button"
                 disabled={loading}
                 onClick={() => void handleGoogle()}
-                className="mt-8 h-[58px] border border-[#E5E7EB] rounded-2xl flex items-center justify-center gap-3 font-semibold text-[#111827] hover:border-[#C7D2FE] hover:bg-[#FAFBFF] transition-all disabled:opacity-60"
+                className="mt-7 h-[38px] border border-[#E5E7EB] rounded-xl text-sm flex items-center justify-center gap-3 font-semibold text-[#111827] hover:border-[#C7D2FE] hover:bg-[#FAFBFF] transition-all disabled:opacity-60"
               >
                 <img
                   src="https://www.svgrepo.com/show/475656/google-color.svg"
@@ -230,7 +230,7 @@ export default function RegisterPage() {
                 Continue with Google
               </button>
 
-              <div className="flex items-center gap-4 my-8">
+              <div className="flex items-center gap-3 my-6">
                 <div className="flex-1 h-[1px] bg-[#E5E7EB]" />
 
                 <span className="text-[#9CA3AF] text-sm">
@@ -242,7 +242,7 @@ export default function RegisterPage() {
 
               <form
                 onSubmit={handleRegister}
-                className="space-y-5"
+                className="space-y-4"
               >
 
                 {/* FULL NAME */}
@@ -259,7 +259,7 @@ export default function RegisterPage() {
                     onChange={(e) =>
                       setFullName(e.target.value)
                     }
-                    className="w-full h-[58px] rounded-2xl border border-[#E5E7EB] px-5 outline-none focus:border-[#818CF8] bg-[#FCFCFD]"
+                    className="w-full h-[40px] rounded-xl text-sm border border-[#E5E7EB] px-4 outline-none focus:border-[#818CF8] bg-[#FCFCFD]"
                   />
                 </div>
 
@@ -277,7 +277,7 @@ export default function RegisterPage() {
                     onChange={(e) =>
                       setEmail(e.target.value)
                     }
-                    className="w-full h-[58px] rounded-2xl border border-[#E5E7EB] px-5 outline-none focus:border-[#818CF8] bg-[#FCFCFD]"
+                    className="w-full h-[40px] rounded-xl text-sm border border-[#E5E7EB] px-4 outline-none focus:border-[#818CF8] bg-[#FCFCFD]"
                   />
                 </div>
 
@@ -296,7 +296,7 @@ export default function RegisterPage() {
                       onChange={(e) =>
                         setPassword(e.target.value)
                       }
-                      className="w-full h-[58px] rounded-2xl border border-[#E5E7EB] px-5 pr-14 outline-none focus:border-[#818CF8] bg-[#FCFCFD]"
+                      className="w-full h-[40px] rounded-xl text-sm border border-[#E5E7EB] px-4 pr-12 outline-none focus:border-[#818CF8] bg-[#FCFCFD]"
                     />
 
                     <button
@@ -305,16 +305,16 @@ export default function RegisterPage() {
                       className="absolute right-5 top-1/2 -translate-y-1/2 text-[#9CA3AF]"
                       aria-label={showPass ? 'Hide password' : 'Show password'}
                     >
-                      {showPass ? <EyeOff size={20} /> : <Eye size={20} />}
+                      {showPass ? <EyeOff size={16} /> : <Eye size={16} />}
                     </button>
                   </div>
 
                   {/* PASSWORD CHECKS */}
-                  <div className="flex flex-wrap gap-4 mt-4">
+                  <div className="flex flex-wrap gap-2 mt-2">
 
                     <div className="flex items-center gap-2">
                       <div
-                        className={`w-4 h-4 rounded-full flex items-center justify-center ${
+                        className={`w-3 h-3 rounded-full flex items-center justify-center ${
                           password.length >= 8
                             ? 'bg-green-500'
                             : 'bg-gray-300'
@@ -322,8 +322,8 @@ export default function RegisterPage() {
                       >
                         {password.length >= 8 && (
                           <svg
-                            width="8"
-                            height="6"
+                            width="6"
+                            height="4"
                             viewBox="0 0 8 6"
                             fill="none"
                           >
@@ -351,7 +351,7 @@ export default function RegisterPage() {
 
                     <div className="flex items-center gap-2">
                       <div
-                        className={`w-4 h-4 rounded-full flex items-center justify-center ${
+                        className={`w-3 h-3 rounded-full flex items-center justify-center ${
                           /[0-9!@#$%^&*]/.test(password)
                             ? 'bg-green-500'
                             : 'bg-gray-300'
@@ -399,7 +399,7 @@ export default function RegisterPage() {
                     className="mt-1 accent-indigo-500"
                   />
 
-                  <p className="text-sm text-[#6B7280] leading-6">
+                  <p className="text-sm text-[#6B7280] leading-5">
                     I agree to the{' '}
                     <Link
                       href="/terms"
@@ -410,7 +410,7 @@ export default function RegisterPage() {
                     and{' '}
                     <Link
                       href="/privacy"
-                      className="text-indigo-500 font-semibold"
+                      className="text-indigo-500 text-sm font-semibold"
                     >
                       Privacy Policy
                     </Link>
@@ -419,7 +419,7 @@ export default function RegisterPage() {
 
                 {/* ERROR */}
                 {error && !success && (
-                  <div className="bg-red-50 border border-red-200 text-red-500 rounded-xl p-4 text-sm">
+                  <div className="bg-red-50 border border-red-200 text-red-500 rounded-lg p-3 text-sm">
                     {error}
                   </div>
                 )}
@@ -428,7 +428,7 @@ export default function RegisterPage() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full h-[58px] bg-[#FFD95A] rounded-2xl font-bold text-[#111827] hover:brightness-95 transition-all shadow-lg mt-2"
+                  className="w-full h-[40px] bg-[#FFD95A] rounded-xl font-bold text-[#111827] hover:brightness-95 transition-all shadow-lg mt-2"
                 >
                   {loading
                     ? 'Creating Account...'
@@ -436,11 +436,11 @@ export default function RegisterPage() {
                 </button>
               </form>
 
-              <p className="mt-8 text-center text-[#6B7280]">
+              <p className="mt-5 text-center text-sm text-[#6B7280]">
                 Already have an account?{' '}
                 <Link
                   href="/login"
-                  className="text-indigo-500 font-bold"
+                  className="text-indigo-500 text-sm font-bold"
                 >
                   Sign in
                 </Link>

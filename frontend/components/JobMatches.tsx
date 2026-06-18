@@ -73,16 +73,16 @@ export function JobMatches({ userId = 'user?.id' }: JobMatchesProps) {
   };
 
   return (
-    <div className="bg-white rounded-2xl shadow-xl p-6 mb-6">
+    <div className="bg-white rounded-xl shadow-lg p-5 mb-5">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h3 className="text-xl font-bold text-gray-800">🎯 Recommended Jobs</h3>
-          <p className="text-gray-500 text-sm">Based on your resume and skills</p>
+          <h3 className="text-lg font-semibold text-gray-800">🎯 Recommended Jobs</h3>
+          <p className="text-gray-500 text-xs">Based on your resume and skills</p>
         </div>
         <button
           onClick={fetchJobMatches}
           disabled={isLoading}
-          className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-lg hover:opacity-90 transition disabled:opacity-50"
+          className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 py-1.5 rounded-md text-sm hover:opacity-90 transition disabled:opacity-50"
         >
           {isLoading ? 'Analyzing...' : 'Find Matching Jobs'}
         </button>
@@ -90,14 +90,14 @@ export function JobMatches({ userId = 'user?.id' }: JobMatchesProps) {
 
       {isLoading && (
         <div className="text-center py-8">
-          <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-          <p className="mt-2 text-gray-500">Analyzing your resume...</p>
+          <div className="inline-block animate-spin rounded-full h-6 w-6 border-b-2 border-blue-600"></div>
+          <p className="mt-2 text-sm text-gray-500">Analyzing your resume...</p>
         </div>
       )}
 
       {!isLoading && hasSearched && matches.length === 0 && (
         <div className="text-center py-8 text-gray-500">
-          <span className="text-4xl mb-2 block">🔍</span>
+          <span className="text-3xl mb-2 block">🔍</span>
           <p>No specific job matches found. Try asking in the chat!</p>
         </div>
       )}
@@ -105,16 +105,16 @@ export function JobMatches({ userId = 'user?.id' }: JobMatchesProps) {
       {!isLoading && matches.length > 0 && (
         <div className="space-y-4">
           {matches.map((job) => (
-            <div key={job.id} className="border border-gray-200 rounded-xl p-4 hover:shadow-md transition">
-              <div className="flex items-start justify-between">
+            <div key={job.id} className="border border-gray-200 rounded-lg p-3 hover:shadow-md transition">
+              <div className="flex items-center justify-between">
                 <div className="flex-1">
-                  <h4 className="font-semibold text-gray-800">{job.title}</h4>
-                  <p className="text-sm text-gray-500">{job.company} • {job.location}</p>
-                  <p className="text-sm text-gray-600 mt-2">{job.description}</p>
+                  <h4 className="font-medium text-[15px] text-gray-800">{job.title}</h4>
+                  <p className="text-xs text-gray-500">{job.company} • {job.location}</p>
+                  <p className="text-[13px] text-gray-600 mt-1.5 leading-relaxed">{job.description}</p>
                 </div>
                 <div className="ml-4 text-center">
-                  <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center">
-                    <span className="text-lg font-bold text-green-600">{job.match_score}%</span>
+                  <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center">
+                    <span className="text-sm font-bold text-green-600">{job.match_score}%</span>
                   </div>
                   <p className="text-xs text-gray-500 mt-1">Match</p>
                 </div>
@@ -125,7 +125,7 @@ export function JobMatches({ userId = 'user?.id' }: JobMatchesProps) {
       )}
 
       {!hasSearched && !isLoading && (
-        <div className="text-center py-8 text-gray-400 border-2 border-dashed border-gray-200 rounded-xl">
+        <div className="text-center py-6 text-gray-400 border border-dashed border-gray-200 rounded-lg">
           <span className="text-4xl mb-2 block">💼</span>
           <p>Click "Find Matching Jobs" to see personalized recommendations</p>
         </div>

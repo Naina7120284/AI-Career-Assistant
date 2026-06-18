@@ -154,32 +154,32 @@ await fetch('/api/skills-growth', {
   };
 
   return (
-    <div className="bg-white/70 backdrop-blur-xl border border-white/60 rounded-[34px] shadow-[0_15px_40px_rgba(170,180,220,0.10)] overflow-hidden">
+    <div className="bg-white/70 backdrop-blur-xl border border-white/60 rounded-[24px] shadow-[0_15px_40px_rgba(170,180,220,0.10)] overflow-hidden">
 
-      <div className="p-8 md:p-12">
+      <div className="p-6 md:p-8">
 
         {/* TOP */}
-        <div className="text-center mb-10">
+        <div className="text-center mb-7">
 
-          <div className="w-24 h-24 rounded-[28px] bg-gradient-to-br from-[#EEF4FF] to-[#F6F0FF] flex items-center justify-center mx-auto mb-6 shadow-sm border border-white">
+          <div className="w-16 h-16 rounded-[18px] bg-gradient-to-br from-[#EEF4FF] to-[#F6F0FF] flex items-center justify-center mx-auto mb-6 shadow-sm border border-white">
 
-            <span className="text-5xl">
+            <span className="text-3xl">
               📄
             </span>
           </div>
 
-          <h2 className="text-[34px] font-black text-[#14213D] tracking-[-0.03em]">
+          <h2 className="text-[26px] md:text-[30px] font-black text-[#14213D] tracking-[-0.03em]">
             Upload Your Resume
           </h2>
 
-          <p className="text-[#64748B] mt-3 text-[16px]">
+          <p className="text-[#64748B] mt-2 text-[14px]">
             Let AI analyze your skills and find your dream job
           </p>
         </div>
 
         {/* DROP AREA */}
         <div
-          className={`relative border-2 border-dashed rounded-[28px] p-10 text-center transition-all duration-300 cursor-pointer bg-white/50 backdrop-blur-sm ${
+          className={`relative border-2 border-dashed rounded-[18px] p-6 text-center transition-all duration-300 cursor-pointer bg-white/50 backdrop-blur-sm ${
             dragActive
               ? 'border-[#7C9DFF] bg-[#F4F7FF]'
               : 'border-[#D7E2F3] hover:border-[#9AB6FF]'
@@ -204,9 +204,9 @@ await fetch('/api/skills-growth', {
             className="cursor-pointer block"
           >
 
-            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#E8EEFF] to-[#FFF7D6] flex items-center justify-center mx-auto mb-6 shadow-sm">
+            <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#E8EEFF] to-[#FFF7D6] flex items-center justify-center mx-auto mb-6 shadow-sm">
 
-              <span className="text-4xl">
+              <span className="text-2xl">
                 📁
               </span>
             </div>
@@ -215,7 +215,7 @@ await fetch('/api/skills-growth', {
 
               <div>
 
-                <div className="w-full max-w-[300px] h-3 bg-[#E6ECF8] rounded-full mx-auto overflow-hidden">
+                <div className="w-full max-w-[300px] h-2 bg-[#E6ECF8] rounded-full mx-auto overflow-hidden">
 
                   <div
                     className="h-full bg-gradient-to-r from-[#7C9DFF] to-[#A855F7] rounded-full transition-all duration-300"
@@ -223,7 +223,7 @@ await fetch('/api/skills-growth', {
                   />
                 </div>
 
-                <p className="mt-4 text-[#475569] font-medium">
+                <p className="mt-4 text-sm text-[#475569] font-medium">
                   {progress < 100
                     ? 'Analyzing your resume...'
                     : 'Complete! Redirecting...'}
@@ -233,7 +233,7 @@ await fetch('/api/skills-growth', {
             ) : (
 
               <>
-                <p className="text-[#475569] text-[17px]">
+                <p className="text-[#475569] text-[14px]">
 
                   <span className="font-bold text-[#5B7CFA]">
                     Click to upload
@@ -242,7 +242,7 @@ await fetch('/api/skills-growth', {
                   {' '}or drag and drop
                 </p>
 
-                <p className="text-sm text-[#94A3B8] mt-2">
+                <p className="text-xs text-[#94A3B8] mt-2">
                   PDF files only (Max 5MB)
                 </p>
               </>
@@ -251,37 +251,37 @@ await fetch('/api/skills-growth', {
         </div>
 
         {/* FEATURES */}
-        <div className="mt-10 grid grid-cols-3 gap-5">
+        <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3">
 
-          <div className="bg-white/70 rounded-2xl p-4 border border-[#EEF2FF] text-center shadow-sm">
+          <div className="bg-white/70 rounded-xl p-3 border border-[#EEF2FF] text-center shadow-sm">
 
-            <div className="w-12 h-12 rounded-xl bg-[#ECFDF3] flex items-center justify-center mx-auto mb-3 text-xl">
+            <div className="w-10 h-10 rounded-lg bg-[#ECFDF3] flex items-center justify-center mx-auto mb-3 text-base">
               🔒
             </div>
 
-            <p className="text-sm font-semibold text-[#475569]">
+            <p className="text-xs font-semibold text-[#475569]">
               Secure Upload
             </p>
           </div>
 
-          <div className="bg-white/70 rounded-2xl p-4 border border-[#EEF2FF] text-center shadow-sm">
+          <div className="bg-white/70 rounded-xl p-3 border border-[#EEF2FF] text-center shadow-sm">
 
-            <div className="w-12 h-12 rounded-xl bg-[#F3E8FF] flex items-center justify-center mx-auto mb-3 text-xl">
+            <div className="w-10 h-10 rounded-lg bg-[#F3E8FF] flex items-center justify-center mx-auto mb-3 text-base">
               🤖
             </div>
 
-            <p className="text-sm font-semibold text-[#475569]">
+            <p className="text-xs font-semibold text-[#475569]">
               AI Analysis
             </p>
           </div>
 
-          <div className="bg-white/70 rounded-2xl p-4 border border-[#EEF2FF] text-center shadow-sm">
+          <div className="bg-white/70 rounded-xl p-3 border border-[#EEF2FF] text-center shadow-sm">
 
-            <div className="w-12 h-12 rounded-xl bg-[#EFF6FF] flex items-center justify-center mx-auto mb-3 text-xl">
+            <div className="w-10 h-10 rounded-lg bg-[#EFF6FF] flex items-center justify-center mx-auto mb-3 text-base">
               ⚡
             </div>
 
-            <p className="text-sm font-semibold text-[#475569]">
+            <p className="text-xs font-semibold text-[#475569]">
               Instant Results
             </p>
           </div>

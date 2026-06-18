@@ -39,30 +39,30 @@ export default function AppShell({
     pathname?.includes('/auth/callback')
 
   const navLinks = [
-    { icon: <Home size={20} />, label: 'Home', path: '/' },
-    { icon: <MessageSquare size={20} />, label: 'Career Chat', path: '/career-chat' },
-    { icon: <FileSearch size={20} />, label: 'Resume Review', path: '/resume-review' },
-    { icon: <FileEdit size={20} />, label: 'Cover Letter', path: '/cover-letter' },
-    { icon: <UserCheck size={20} />, label: 'Interview Prep', path: '/interview-prep' },
-    { icon: <Briefcase size={20} />, label: 'Job Search', path: '/job-search' },
-    { icon: <LineChart size={20} />, label: 'Skills & Growth', path: '/skills-growth' },
-    { icon: <Map size={20} />, label: 'Career Roadmap', path: '/career-roadmap' },
-    { icon: <Bookmark size={20} />, label: 'Saved', path: '/saved' },
+    { icon: <Home size={18} />, label: 'Home', path: '/' },
+    { icon: <MessageSquare size={18} />, label: 'Career Chat', path: '/career-chat' },
+    { icon: <FileSearch size={18} />, label: 'Resume Review', path: '/resume-review' },
+    { icon: <FileEdit size={18} />, label: 'Cover Letter', path: '/cover-letter' },
+    { icon: <UserCheck size={18} />, label: 'Interview Prep', path: '/interview-prep' },
+    { icon: <Briefcase size={18} />, label: 'Job Search', path: '/job-search' },
+    { icon: <LineChart size={18} />, label: 'Skills & Growth', path: '/skills-growth' },
+    { icon: <Map size={18} />, label: 'Career Roadmap', path: '/career-roadmap' },
+    { icon: <Bookmark size={18} />, label: 'Saved', path: '/saved' },
   ]
 
   const Sidebar = () => (
     <div className="flex flex-col h-full overflow-hidden">
       {/* LOGO */}
-      <div className="px-8 pt-9 pb-8 flex-shrink-0">
+      <div className="px-6 pt-6 pb-5 flex-shrink-0">
         <div className="flex items-center gap-4">
-          <div className="w-12 h-12 rounded-2xl bg-[#FFF6DA] flex items-center justify-center shadow-sm">
+          <div className="w-10 h-10 rounded-2xl bg-[#FFF6DA] flex items-center justify-center shadow-sm">
             ✨
           </div>
           <div>
-            <h1 className="font-black text-[28px] text-[#111827] leading-none">
+            <h1 className="font-black text-[22px] text-[#111827] leading-none">
               AI Career
             </h1>
-            <p className="text-[11px] tracking-[0.28em] text-[#F5A300] font-bold mt-2">
+            <p className="text-[10px] tracking-[0.22em] text-[#F5A300] font-bold mt-2">
               ASSISTANT
             </p>
           </div>
@@ -70,7 +70,7 @@ export default function AppShell({
       </div>
 
       {/* NAVIGATION — scrollable */}
-      <div className="flex-1 min-h-0 px-5 space-y-2 overflow-y-auto">
+      <div className="flex-1 min-h-0 px-5 space-y-2 overflow-y-auto hide-scrollbar">
         {navLinks.map((item) => {
           const active =
             pathname === item.path ||
@@ -85,14 +85,14 @@ export default function AppShell({
                   setSidebarOpen(false)
                 }
               }}
-              className={`w-full flex items-center gap-4 px-5 py-[15px] rounded-2xl transition-all ${
+              className={`w-full flex items-center gap-3 px-4 py-3 rounded-2xl transition-all ${
                 active
                   ? 'bg-[#EEF4FF] text-[#111827] font-semibold shadow-sm'
                   : 'text-[#667085] hover:bg-[#F8FAFF]'
               }`}
             >
               <div className="opacity-90">{item.icon}</div>
-              <span className="text-[16px]">{item.label}</span>
+              <span className="text-[14px]">{item.label}</span>
             </button>
           )
         })}
@@ -100,12 +100,12 @@ export default function AppShell({
 
       {/* PREMIUM CARD — always at the bottom */}
       <div className="p-5 flex-shrink-0">
-        <div className="bg-[#FFF9EE] rounded-[26px] p-5 border border-[#FFE7A3] shadow-sm">
+        <div className="bg-[#FFF9EE] rounded-[18px] p-1 border border-[#FFE7A3] shadow-sm">
           <div className="flex items-center gap-3 mb-2">
-            <div className="w-9 h-9 rounded-xl bg-[#FFF1BF] flex items-center justify-center flex-shrink-0">
+            <div className="w-3 h-3 rounded-xl bg-[#FFF1BF] flex items-center justify-center flex-shrink-0">
               👑
             </div>
-            <h3 className="font-bold text-[#111827] text-[18px] leading-tight">
+            <h3 className="font-bold text-[#111827] text-[15px] leading-tight">
               Go Premium
             </h3>
           </div>
@@ -114,7 +114,7 @@ export default function AppShell({
           </p>
           <button
             onClick={() => router.push('/upgrade')}
-            className="mt-4 w-full h-12 rounded-xl bg-[#FFD95A] font-bold text-[#111827] text-[14px] hover:brightness-95 transition-all shadow-sm"
+            className="mt-3 w-full h-10 rounded-xl bg-[#FFD95A] font-bold text-[#111827] text-[12px] hover:brightness-95 transition-all shadow-sm"
           >
             UPGRADE NOW
           </button>
@@ -171,7 +171,7 @@ export default function AppShell({
 
       <div className="flex h-screen overflow-hidden">
         {/* DESKTOP SIDEBAR */}
-        <aside className="hidden lg:flex w-[310px] bg-white border-r border-[#EEF2FF] flex-col shadow-[0_0_40px_rgba(120,130,160,0.04)]">
+        <aside className="hidden lg:flex w-[260px] bg-white border-r border-[#EEF2FF] flex-col shadow-[0_0_40px_rgba(120,130,160,0.04)]">
           <Sidebar />
         </aside>
 
@@ -201,7 +201,7 @@ export default function AppShell({
         {/* MAIN CONTENT */}
         <div className="flex-1 flex flex-col overflow-hidden">
           {/* NAVBAR */}
-          <header className="h-[76px] sm:h-[84px] lg:h-[92px] px-4 sm:px-6 lg:px-12 flex items-center justify-between flex-shrink-0">
+          <header className="h-[70px] sm:h-[74px] lg:h-[78px] px-4 sm:px-5 lg:px-8 flex items-center justify-between flex-shrink-0">
             <div className="flex items-center gap-4">
               <button
                 onClick={() => setSidebarOpen(true)}
@@ -213,7 +213,7 @@ export default function AppShell({
 
             <div className="flex items-center gap-2 sm:gap-4 lg:gap-5">
               {/* NOTIFICATION */}
-              <div className="relative bg-white w-14 h-14 rounded-2xl flex items-center justify-center shadow-sm border border-[#EEF2FF]">
+              <div className="relative bg-white w-12 h-12 rounded-2xl flex items-center justify-center shadow-sm border border-[#EEF2FF]">
                 <Bell size={21} className="text-[#667085]" />
                 <div className="absolute top-2 right-2 w-5 h-5 rounded-full bg-red-500 text-white text-[10px] flex items-center justify-center font-bold">
                   3
@@ -221,7 +221,7 @@ export default function AppShell({
               </div>
 
               {/* USER CARD */}
-              <div className="bg-white px-2 sm:px-4 lg:px-5 h-12 sm:h-14 lg:h-16 rounded-xl sm:rounded-2xl flex items-center gap-2 sm:gap-3 lg:gap-4 shadow-sm border border-[#EEF2FF] min-w-0">
+              <div className="bg-whitepx-3 lg:px-4 h-12 lg:h-14 rounded-xl sm:rounded-2xl flex items-center gap-2 sm:gap-3 lg:gap-4 shadow-sm border border-[#EEF2FF] min-w-0">
                 <div>
                   <p className="font-bold text-[13px] lg:text-[15px] truncate max-w-[110px]">
                     {loading
@@ -246,7 +246,7 @@ export default function AppShell({
                     )}`
                   }
                   alt="avatar"
-                  className="w-9 h-9 sm:w-10 sm:h-10 lg:w-11 lg:h-11 rounded-xl object-cover flex-shrink-0"
+                  className="w-9 h-9 sm:w-10 sm:h-10 lg:w-9 lg:h-9 rounded-xl object-cover flex-shrink-0"
                 />
               </div>
 
@@ -266,7 +266,7 @@ export default function AppShell({
                       setSigningOut(false)
                     }
                   }}
-                  className="h-11 sm:h-12 lg:h-14 rounded-xl sm:rounded-2xl border border-[#EEF2FF] bg-white px-3 sm:px-4 font-bold text-[#667085] shadow-sm transition hover:bg-[#F8FAFF] hover:text-[#111827] disabled:opacity-60"
+                  className="h-10 sm:h-11 lg:h-12 rounded-xl sm:rounded-2xl border border-[#EEF2FF] bg-white px-3 sm:px-4 font-bold text-[#667085] shadow-sm transition hover:bg-[#F8FAFF] hover:text-[#111827] disabled:opacity-60"
                   aria-label="Sign out"
                 >
                   <span className="flex items-center gap-2">
@@ -293,7 +293,7 @@ export default function AppShell({
           </header>
 
           {/* PAGE CONTENT */}
-          <main className="flex-1 overflow-y-auto px-5 lg:px-12 pb-10">
+          <main className="flex-1 overflow-y-auto hide-scrollbar px-4 lg:px-8 pb-8">
             {children}
           </main>
         </div>

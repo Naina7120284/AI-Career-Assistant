@@ -121,19 +121,19 @@ export default function SkillsGrowthPage() {
   }
 
   return (
-    <div className='min-h-screen bg-[#f7f9fc] px-4 py-6'>
-      <div className='mx-auto max-w-[1350px]'>
-        <h1 className='text-5xl font-bold text-[#101828]'>
+    <div className='min-h-screen bg-[#f7f9fc] px-4 py-4'>
+      <div className='mx-auto max-w-6xl'>
+        <h1 className='text-3xl md:text-3xl font-bold text-[#101828]'>
           Skills & Growth
         </h1>
 
-        <p className='mt-4 text-2xl text-[#667085]'>
+        <p className='mt-2 text-sm md:text-base text-[#667085]'>
           Assess your skills, track progress, and grow
           your career.
         </p>
 
         {demoMode && (
-          <p className="mt-4 rounded-2xl border border-blue-200 bg-blue-50 px-4 py-3 text-blue-900">
+          <p className="mt-4 rounded-xl text-sm border border-blue-200 bg-blue-50 px-3 py-2 text-blue-900">
             Showing sample data because your Supabase skills tables are empty or not configured yet.
           </p>
         )}
@@ -141,23 +141,23 @@ export default function SkillsGrowthPage() {
         {/* Top */}
         <div className='mt-10 grid grid-cols-1 gap-8 xl:grid-cols-[1.4fr_1fr]'>
           {/* Skills */}
-          <div className='rounded-[36px] border border-[#edf1f7] bg-white p-10 shadow-sm'>
-            <h2 className='text-3xl font-bold text-[#101828]'>
+          <div className='rounded-[24px] border border-[#edf1f7] bg-white p-6 shadow-sm'>
+            <h2 className='text-2xl font-bold text-[#101828]'>
               Your Skills Overview
             </h2>
 
             {skills ? (
               <>
-                <div className='mt-10 flex flex-col gap-10 xl:flex-row xl:items-center'>
+                <div className='mt-6 flex flex-col gap-6 xl:flex-row xl:items-center'>
                   {/* Circle */}
                   <div className='flex items-center justify-center'>
-                    <div className='relative flex h-[220px] w-[220px] items-center justify-center rounded-full border-[16px] border-[#3b82f6] border-t-[#dbeafe]'>
+                    <div className='relative flex h-[170px] w-[170px] items-center justify-center rounded-full border-[12px] border-[#3b82f6] border-t-[#dbeafe]'>
                       <div className='text-center'>
-                        <h3 className='text-5xl font-bold text-[#101828]'>
+                        <h3 className='text-3xl font-bold text-[#101828]'>
                           {skills.overall_score}%
                         </h3>
 
-                        <p className='mt-2 text-xl text-[#667085]'>
+                        <p className='mt-2 text-sm text-[#667085]'>
                           Overall Score
                         </p>
                       </div>
@@ -194,24 +194,24 @@ export default function SkillsGrowthPage() {
                         key={skill.name}
                         className='flex items-center gap-5'
                       >
-                        <div className='flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f5f7fb]'>
-                          <Brain className='h-6 w-6 text-[#3b82f6]' />
+                        <div className='flex h-10 w-10 items-center justify-center rounded-xl bg-[#f5f7fb]'>
+                          <Brain className='h-4 w-4 text-[#3b82f6]' />
                         </div>
 
                         <div className='flex-1'>
                           <div className='mb-2 flex items-center justify-between'>
-                            <p className='text-xl font-semibold text-[#101828]'>
+                            <p className='text-base font-semibold text-[#101828]'>
                               {skill.name}
                             </p>
 
-                            <p className='text-lg text-[#667085]'>
+                            <p className='text-sm text-[#667085]'>
                               {skill.value}%
                             </p>
                           </div>
 
-                          <div className='h-3 rounded-full bg-[#edf1f7]'>
+                          <div className='h-2 rounded-full bg-[#edf1f7]'>
                             <div
-                              className='h-3 rounded-full bg-[#3b82f6]'
+                              className='h-2 rounded-full bg-[#3b82f6]'
                               style={{
                                 width: `${skill.value}%`,
                               }}
@@ -224,7 +224,7 @@ export default function SkillsGrowthPage() {
                 </div>
 
                 <div className='mt-10 border-t border-[#edf1f7] pt-8 text-center'>
-                  <button className='rounded-2xl bg-[#f5f7fb] px-10 py-5 text-xl font-semibold text-[#667085]'>
+                  <button className='rounded-xl bg-[#f5f7fb] px-6 py-3 text-sm font-semibold text-[#667085]'>
                     Assess Skills Again
                   </button>
                 </div>
@@ -236,7 +236,7 @@ export default function SkillsGrowthPage() {
             )}
           </div>
 
-                  <div className='mt-10 space-y-8'>
+                  <div className='mt-10 space-y-5'>
   {recommendations.length > 0 ? (
     recommendations.map(
       (
@@ -247,12 +247,12 @@ export default function SkillsGrowthPage() {
           key={index}
           className='flex gap-5'
         >
-          <div className='flex h-16 w-16 items-center justify-center rounded-2xl bg-[#fef2f2]'>
+          <div className='flex h-12 w-12 items-center justify-center rounded-xl bg-[#fef2f2]'>
             🧠
           </div>
 
           <div className='flex-1'>
-            <p className='text-lg font-medium text-[#101828]'>
+            <p className='text-sm font-medium text-[#101828]'>
               {item}
             </p>
           </div>
@@ -269,47 +269,47 @@ export default function SkillsGrowthPage() {
 
         {/* Courses */}
         <div className='mt-12'>
-          <h2 className='text-3xl font-bold text-[#101828]'>
+          <h2 className='text-2xl font-bold text-[#101828]'>
             Continue Learning
           </h2>
 
-          <div className='mt-8 grid grid-cols-1 gap-8 xl:grid-cols-3'>
+          <div className='mt-8 grid grid-cols-1 gap-5 xl:grid-cols-3'>
             {courses.length > 0 ? (
               courses.map((course) => (
                 <div
                   key={course.id}
-                  className='rounded-[32px] border border-[#edf1f7] bg-white p-8 shadow-sm'
+                  className='rounded-[20px] border border-[#edf1f7] bg-white p-5 shadow-sm'
                 >
                   <div className='flex items-start gap-5'>
-                    <div className='flex h-16 w-16 items-center justify-center rounded-2xl bg-[#eef2ff]'>
+                    <div className='flex h-12 w-12 items-center justify-center rounded-xl bg-[#eef2ff]'>
                       {getIcon(course.icon)}
                     </div>
 
                     <div>
-                      <h3 className='text-2xl font-bold text-[#101828]'>
+                      <h3 className='text-lg font-bold text-[#101828]'>
                         {course.title}
                       </h3>
 
-                      <p className='mt-2 text-lg text-[#667085]'>
+                      <p className='mt-2 text-sm text-[#667085]'>
                         {course.level}
                       </p>
                     </div>
                   </div>
 
-                  <div className='mt-10'>
+                  <div className='mt-5'>
                     <div className='mb-3 flex items-center justify-between'>
-                      <p className='text-lg text-[#667085]'>
+                      <p className='text-sm text-[#667085]'>
                         Progress
                       </p>
 
-                      <p className='text-lg font-semibold text-[#667085]'>
+                      <p className='text-sm font-semibold text-[#667085]'>
                         {course.progress}%
                       </p>
                     </div>
 
-                    <div className='h-3 rounded-full bg-[#edf1f7]'>
+                    <div className='h-2 rounded-full bg-[#edf1f7]'>
                       <div
-                        className='h-3 rounded-full bg-[#3b82f6]'
+                        className='h-2 rounded-full bg-[#3b82f6]'
                         style={{
                           width: `${course.progress}%`,
                         }}
@@ -319,17 +319,17 @@ export default function SkillsGrowthPage() {
                 </div>
               ))
             ) : (
-              <div className='col-span-3 rounded-[32px] border border-dashed border-[#d0d5dd] bg-white py-20 text-center text-xl text-[#667085]'>
+              <div className='col-span-3 rounded-[20px] border border-dashed border-[#d0d5dd] bg-white py-14 text-center text-sm text-[#667085]'>
                 No learning courses yet
               </div>
             )}
           </div>
 
           <div className='mt-10 text-center'>
-            <button className='inline-flex items-center gap-3 text-2xl font-semibold text-[#4f46e5]'>
+            <button className='inline-flex items-center gap-3 text-lg font-semibold text-[#4f46e5]'>
               View All Courses
 
-              <ArrowRight className='h-6 w-6' />
+              <ArrowRight className='h-4 w-4' />
             </button>
           </div>
         </div>

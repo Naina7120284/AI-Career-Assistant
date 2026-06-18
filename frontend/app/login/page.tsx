@@ -108,14 +108,14 @@ function LoginForm() {
   }
 
   return (
-    <div className="min-h-screen bg-[linear-gradient(180deg,#F8FAFF_0%,#F6F8FF_45%,#FFF8EC_100%)] relative overflow-hidden flex items-center justify-center px-6 py-10">
+    <div className="min-h-screen bg-[linear-gradient(180deg,#F8FAFF_0%,#F6F8FF_45%,#FFF8EC_100%)] relative overflow-hidden flex items-center justify-center px-3 py-5">
 
       {/* OUTER GLOWS */}
-      <div className="absolute top-[-100px] left-[-100px] w-[420px] h-[320px] bg-[#EAF3FF] rounded-full blur-3xl opacity-70" />
-      <div className="absolute bottom-[-120px] right-[-100px] w-[520px] h-[360px] bg-[#FFF1BF] rounded-full blur-3xl opacity-70" />
+      <div className="absolute top-[-100px] left-[-100px] w-[320px] h-[250px] bg-[#EAF3FF] rounded-full blur-3xl opacity-70" />
+      <div className="absolute bottom-[-120px] right-[-100px] w-[420px] h-[300px] bg-[#FFF1BF] rounded-full blur-3xl opacity-70" />
 
       {/* MAIN CARD */}
-      <div className="relative z-10 w-full max-w-5xl bg-white/85 backdrop-blur-xl rounded-[38px] overflow-hidden shadow-[0_20px_80px_rgba(80,90,140,0.08)] grid grid-cols-1 lg:grid-cols-2">
+      <div className="relative z-10 w-full max-w-4xl bg-white/85 backdrop-blur-xl rounded-[28px] overflow-hidden shadow-[0_20px_80px_rgba(80,90,140,0.08)] grid grid-cols-1 lg:grid-cols-2">
 
         {/* LEFT PANEL */}
         <div className="relative overflow-hidden border-r border-[#EEF2FF]">
@@ -129,28 +129,28 @@ function LoginForm() {
           <div className="absolute inset-0 bg-white/10 backdrop-blur-[1px]" />
 
           {/* CONTENT */}
-          <div className="relative z-10 px-10 pt-12 h-full flex flex-col">
-            <h1 className="text-[42px] font-black text-[#111827] leading-tight">
+          <div className="relative z-10 px-8 pt-8 h-full flex flex-col">
+            <h1 className="text-[28px] font-black text-[#111827] leading-tight">
               Welcome Back! 👋
             </h1>
-            <p className="mt-4 text-[#6B7280] text-[16px] leading-7 max-w-md">
+            <p className="mt-4 text-[#6B7280] text-[14px] leading-6 max-w-md">
               Sign in to continue your career journey
             </p>
 
-            <div className="mt-10 space-y-5">
+            <div className="mt-5 space-y-4">
               {[
                 'AI-powered career guidance',
                 'Smart resume analysis',
                 'Personalized recommendations',
                 'Interview & job assistance',
               ].map((item) => (
-                <div key={item} className="flex items-center gap-4">
-                  <div className="w-6 h-6 rounded-full bg-[#FFD95A] flex items-center justify-center shadow-sm">
-                    <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                <div key={item} className="flex items-center gap-3">
+                  <div className="w-5 h-5 rounded-full bg-[#FFD95A] flex items-center justify-center shadow-sm">
+                    <svg width="9" height="7" viewBox="0 0 10 8" fill="none">
                       <path d="M1 4L3.5 6.5L9 1" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
-                  <span className="text-[#4B5563] font-medium text-[15px]">{item}</span>
+                  <span className="text-[#4B5563] font-medium text-[14px]">{item}</span>
                 </div>
               ))}
             </div>
@@ -160,18 +160,18 @@ function LoginForm() {
               <img
                 src="/robo.png"
                 alt="robot"
-                className="w-[430px] max-w-full object-contain drop-shadow-[0_20px_40px_rgba(80,90,180,0.12)]"
+                className="w-[320px] max-w-full object-contain drop-shadow-[0_20px_40px_rgba(80,90,180,0.12)]"
               />
             </div>
           </div>
         </div>
 
         {/* RIGHT PANEL */}
-        <div className="px-10 py-12 flex flex-col justify-center bg-white/70 backdrop-blur-md">
-          <h2 className="text-[34px] font-black text-[#111827]">
+        <div className="px-8 py-8 flex flex-col justify-center bg-white/70 backdrop-blur-md">
+          <h2 className="text-[20px] font-black text-[#111827]">
             Sign in to your account
           </h2>
-          <p className="text-[#6B7280] mt-2">
+          <p className="text-[#6B7280] text-[14px] mt-1">
             Enter your details to access your account
           </p>
 
@@ -180,7 +180,7 @@ function LoginForm() {
             type="button"
             disabled={loading}
             onClick={() => void handleGoogle()}
-            className="mt-8 h-[58px] border border-[#E5E7EB] rounded-2xl flex items-center justify-center gap-3 font-semibold text-[#111827] hover:border-[#C7D2FE] hover:bg-[#FAFBFF] transition-all w-full disabled:opacity-60"
+            className="mt-7 h-[38px] border border-[#E5E7EB] rounded-xl text-sm flex items-center justify-center gap-3 font-semibold text-[#111827] hover:border-[#C7D2FE] hover:bg-[#FAFBFF] transition-all w-full disabled:opacity-60"
           >
             <img
               src="https://www.svgrepo.com/show/475656/google-color.svg"
@@ -191,14 +191,14 @@ function LoginForm() {
           </button>
 
           {/* DIVIDER */}
-          <div className="flex items-center gap-4 my-8">
+          <div className="flex items-center gap-3 my-6">
             <div className="flex-1 h-[1px] bg-[#E5E7EB]" />
             <span className="text-[#9CA3AF] text-sm">or continue with email</span>
             <div className="flex-1 h-[1px] bg-[#E5E7EB]" />
           </div>
 
           {/* FORM */}
-          <form onSubmit={handleLogin} className="space-y-5">
+          <form onSubmit={handleLogin} className="space-y-4">
             {/* EMAIL */}
             <div>
               <label className="text-sm font-semibold text-[#374151] block mb-2">
@@ -210,7 +210,7 @@ function LoginForm() {
                 placeholder="you@example.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full h-[58px] rounded-2xl border border-[#E5E7EB] px-5 outline-none focus:border-[#818CF8] bg-[#FCFCFD]"
+                className="w-full h-[40px] rounded-xl text-sm border border-[#E5E7EB] px-4 outline-none focus:border-[#818CF8] bg-[#FCFCFD]"
               />
             </div>
 
@@ -229,7 +229,7 @@ function LoginForm() {
                   placeholder="Enter your password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full h-[58px] rounded-2xl border border-[#E5E7EB] px-5 pr-14 outline-none focus:border-[#818CF8] bg-[#FCFCFD]"
+                  className="w-full h-[40px] rounded-xl text-sm border border-[#E5E7EB] px-4 pr-12 outline-none focus:border-[#818CF8] bg-[#FCFCFD]"
                 />
                 <button
                   type="button"
@@ -237,7 +237,7 @@ function LoginForm() {
                   className="absolute right-5 top-1/2 -translate-y-1/2 text-[#9CA3AF]"
                   aria-label={showPass ? 'Hide password' : 'Show password'}
                 >
-                  {showPass ? <EyeOff size={20} /> : <Eye size={20} />}
+                  {showPass ? <EyeOff size={18} /> : <Eye size={20} />}
                 </button>
               </div>
             </div>
@@ -255,7 +255,7 @@ function LoginForm() {
 
             {/* ERROR */}
             {error && (
-              <div className="bg-red-50 border border-red-200 text-red-600 rounded-xl p-4 text-sm">
+              <div className="bg-red-50 border border-red-200 text-red-600 rounded-lg p-3 text-sm">
                 <p>{error}</p>
                 {emailUnconfirmed && (
                   <div className="mt-3">
@@ -279,14 +279,14 @@ function LoginForm() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full h-[58px] bg-[#FFD95A] rounded-2xl font-bold text-[#111827] hover:brightness-95 transition-all shadow-lg disabled:opacity-60"
+              className="w-full h-[40px] bg-[#FFD95A] rounded-xl text-sm font-bold text-[#111827] hover:brightness-95 transition-all shadow-lg disabled:opacity-60"
             >
               {loading ? 'Signing In...' : 'Sign In'}
             </button>
           </form>
 
           {/* FOOTER */}
-          <p className="mt-8 text-center text-[#6B7280]">
+          <p className="mt-6 text-center text-[#6B7280]">
             Don&apos;t have an account?{' '}
             <Link href="/register" className="text-[#F5A300] font-bold">
               Create one

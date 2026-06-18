@@ -499,7 +499,7 @@ export default function CareerChat() {
       </div>
  
       {/* Chat Area */}
-      <div className="flex-1 overflow-y-auto p-6 space-y-4">
+      <div className="flex-1 overflow-y-auto hide-scrollbar p-3 sm:p-6 space-y-4">
         {messages.length === 0 && !interviewRole && (
           <div className="h-full flex flex-col items-center justify-center text-slate-400 space-y-2">
             <Brain size={32} strokeWidth={1.5} />
@@ -514,33 +514,71 @@ export default function CareerChat() {
         )}
  
         {messages.map((msg) => (
-          <div key={msg.id} className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
-            <div className={`max-w-[85%] p-4 rounded-2xl shadow-sm leading-relaxed ${
-              msg.sender === 'user'
-                ? 'bg-indigo-600 text-white rounded-tr-none'
-                : 'bg-slate-100 text-slate-800 rounded-tl-none border border-slate-200'
-            }`}>
- 
-              {msg.type === 'text' && msg.text && (
-                <MarkdownText text={msg.text} isUser={msg.sender === 'user'} />
-              )}
- 
-              {msg.type === 'file' && (
-                <div className="flex items-center gap-2 text-sm">
-                  <FileText size={18} />
-                  <span>{msg.fileName}</span>
-                </div>
-              )}
- 
-              {msg.type === 'image' && msg.imageUrl && (
-                <div>
-                  <img src={msg.imageUrl} alt="upload" className="rounded-xl max-w-[240px]" />
-                  {msg.text && <p className="mt-2 text-sm text-white/90">{msg.text}</p>}
-                </div>
-              )}
-            </div>
-          </div>
-        ))}
+  <div
+    key={msg.id}
+    className={`flex ${
+      msg.sender === 'user'
+        ? 'justify-end'
+        : 'justify-start'
+    }`}
+  >
+    <div
+      className={`
+        max-w-[92%]
+        sm:max-w-[75%]
+        p-3 sm:p-4
+        rounded-2xl
+        shadow-sm
+        leading-relaxed
+        break-words
+        ${
+          msg.sender === 'user'
+            ? 'bg-indigo-600 text-white rounded-tr-none'
+            : 'bg-slate-100 text-slate-800 rounded-tl-none border border-slate-200'
+        }
+      `}
+    >
+      {msg.type === 'text' && msg.text && (
+        <div className="whitespace-pre-wrap break-words">
+          <MarkdownText
+            text={msg.text}
+            isUser={msg.sender === 'user'}
+          />
+        </div>
+      )}
+
+      {msg.type === 'file' && (
+        <div className="flex items-center gap-2 text-sm">
+          <FileText size={18} />
+          <span>{msg.fileName}</span>
+        </div>
+      )}
+
+      {msg.type === 'image' && msg.imageUrl && (
+        <div className="w-full">
+          <img
+            src={msg.imageUrl}
+            alt="upload"
+            className="
+              rounded-xl
+              w-full
+              max-w-[320px]
+              sm:max-w-md
+              h-auto
+              object-cover
+            "
+          />
+
+          {msg.text && (
+            <p className="mt-3 text-sm break-words">
+              {msg.text}
+            </p>
+          )}
+        </div>
+      )}
+    </div>
+  </div>
+))}
  
         {isTyping && (
           <div className="flex justify-start">
@@ -626,10 +664,11 @@ export default function CareerChat() {
     onChange={(e) => setInputText(e.target.value)}
     onKeyDown={(e) => e.key === 'Enter' && handleSendMessage()}
     placeholder={
-      pendingImage
-        ? 'Ask something about this image...'
-        : 'Message Career Assistant...'
-    }
+    window.innerWidth < 640
+    ? "Message..."
+    : "Message Career Assistant..."
+}
+
     className="flex-1 min-w-0 bg-transparent border-none outline-none py-3 text-sm text-slate-700"
   />
 

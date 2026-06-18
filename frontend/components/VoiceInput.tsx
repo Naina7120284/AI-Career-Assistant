@@ -1,7 +1,7 @@
 'use client';
 
+import { Mic } from 'lucide-react';
 import { useState, useEffect } from 'react';
-
 interface VoiceInputProps {
   onTranscript: (text: string) => void;
   language?: string;
@@ -66,7 +66,7 @@ export function VoiceInput({ onTranscript, language = 'en-US' }: VoiceInputProps
     return (
       <button
         disabled
-        className="bg-gray-300 text-gray-500 px-4 py-2 rounded-lg cursor-not-allowed"
+        className="w-9 h-9 rounded-xl bg-slate-200 text-slate-400 flex items-center justify-center cursor-not-allowed"
         title="Speech recognition not supported in your browser"
       >
         🎤 Unsupported
@@ -77,33 +77,29 @@ export function VoiceInput({ onTranscript, language = 'en-US' }: VoiceInputProps
   return (
     <div className="relative">
       <button
-        onClick={startListening}
-        disabled={isListening}
-        className={`
-          px-4 py-2 rounded-lg font-medium transition-all flex items-center gap-2
-          ${isListening 
-            ? 'bg-red-500 text-white animate-pulse' 
-            : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:opacity-90'
-          }
-        `}
-      >
-        {isListening ? (
-          <>
-            <span className="relative flex h-3 w-3">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
-            </span>
-            Listening...
-          </>
-        ) : (
-          <>
-            🎤 Voice
-          </>
-        )}
-      </button>
+  onClick={startListening}
+  disabled={isListening}
+  className={`
+    w-9 h-9 rounded-xl flex items-center justify-center transition-all
+    ${
+      isListening
+        ? 'bg-red-500 text-white scale-110'
+        : 'bg-indigo-50 text-indigo-600 hover:bg-indigo-100'
+    }
+  `}
+>
+  {isListening ? (
+    <span className="relative flex h-2.5 w-2.5">
+      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-white"></span>
+    </span>
+  ) : (
+    <Mic size={16} />
+  )}
+</button>
       
       {error && (
-        <div className="absolute bottom-full left-0 mb-2 bg-red-100 text-red-700 text-xs rounded px-2 py-1 whitespace-nowrap">
+        <div className="absolute bottom-full left-0 mb-2 bg-red-100 text-red-700 text-[11px] rounded-lg px-2 py-1 whitespace-nowrap">
           {error}
         </div>
       )}

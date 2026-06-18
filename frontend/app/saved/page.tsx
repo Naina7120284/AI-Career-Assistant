@@ -148,8 +148,8 @@ export default function SavedPage() {
   if (!isLoggedIn) {
     return (
       <div className='min-h-screen flex items-center justify-center bg-[#f7f9fc] px-6'>
-        <div className='w-full max-w-xl rounded-[28px] border border-[#edf1f7] bg-white p-8 shadow-sm text-center'>
-          <h1 className='text-3xl font-bold text-[#101828]'>
+        <div className='w-full max-w-lg rounded-[20px] border border-[#edf1f7] bg-white p-6 shadow-sm text-center'>
+          <h1 className='text-2xl font-bold text-[#101828]'>
             Saved
           </h1>
 
@@ -160,7 +160,7 @@ export default function SavedPage() {
 
           <a
             href='/login?next=/saved'
-            className='inline-flex mt-6 h-12 items-center justify-center rounded-2xl bg-[#f6c744] px-6 font-semibold text-black hover:opacity-90'
+            className='inline-flex mt-5 h-10 rounded-xl items-center justify-center bg-[#f6c744] px-6 font-semibold text-black hover:opacity-90'
           >
             Go to Login
           </a>
@@ -170,15 +170,15 @@ export default function SavedPage() {
   }
 
   return (
-    <div className='min-h-screen bg-[#f7f9fc] px-6 py-6'>
-      <div className='mx-auto max-w-6xl'>
+    <div className='min-h-screen bg-[#f7f9fc] px-4 py-4'>
+      <div className='mx-auto max-w-5xl'>
         {/* Header */}
 
-        <h1 className='text-4xl font-bold text-[#101828]'>
+        <h1 className='text-3xl font-bold text-[#101828]'>
           Saved
         </h1>
 
-        <p className='mt-2 text-base text-[#667085]'>
+        <p className='mt-1 text-sm text-[#667085]'>
           Your saved items and
           resources.
         </p>
@@ -192,7 +192,7 @@ export default function SavedPage() {
 
         {/* Tabs */}
 
-        <div className='mt-8 flex gap-8 border-b border-[#edf1f7] overflow-x-auto'>
+        <div className='mt-6 flex gap-5 border-b border-[#edf1f7] overflow-x-auto'>
           {tabs.map((tab) => (
             <button
               key={tab}
@@ -200,7 +200,7 @@ export default function SavedPage() {
                 setActiveTab(tab)
                 setCurrentPage(1)
               }}
-              className={`pb-4 text-base font-medium whitespace-nowrap transition ${
+              className={`pb-3 text-sm font-medium whitespace-nowrap transition ${
                 activeTab === tab
                   ? 'border-b-2 border-[#f5b301] text-[#101828]'
                   : 'text-[#667085]'
@@ -213,9 +213,9 @@ export default function SavedPage() {
 
         {/* Saved List */}
 
-        <div className='mt-6 overflow-hidden rounded-[28px] border border-[#edf1f7] bg-white shadow-sm'>
+        <div className='mt-6 overflow-hidden rounded-[20px] border border-[#edf1f7] bg-white shadow-sm'>
           {filteredItems.length === 0 ? (
-            <div className='flex items-center justify-center py-20 text-base text-[#667085]'>
+            <div className='flex items-center justify-center py-14 text-sm text-[#667085]'>
               No saved{' '}
               {activeTab.toLowerCase()}{' '}
               found.
@@ -225,7 +225,7 @@ export default function SavedPage() {
               (item, index) => (
                 <div
                   key={item.id}
-                  className={`flex items-center justify-between px-6 py-6 ${
+                  className={`flex items-center justify-between px-5 py-4 ${
                     index !==
                     paginatedItems.length -
                       1
@@ -235,10 +235,10 @@ export default function SavedPage() {
                 >
                   {/* Left */}
 
-                  <div className='flex items-center gap-5'>
+                  <div className='flex items-center gap-4'>
                     {/* Logo */}
 
-                    <div className='flex h-16 w-16 items-center justify-center rounded-full border border-[#edf1f7] bg-white p-3 overflow-hidden'>
+                    <div className='flex h-12 w-12 items-center justify-center rounded-full border border-[#edf1f7] bg-white p-2 overflow-hidden'>
                       <img
                         src={
                           item.logo ||
@@ -261,7 +261,7 @@ export default function SavedPage() {
                     {/* Info */}
 
                     <div>
-                      <h3 className='text-2xl font-bold text-[#101828]'>
+                      <h3 className='text-lg font-bold text-[#101828]'>
                         {item.title}
                       </h3>
 
@@ -272,16 +272,16 @@ export default function SavedPage() {
 
                       {/* Tags */}
 
-                      <div className='mt-3 flex flex-wrap gap-2'>
-                        <span className='rounded-full bg-[#f5f7fb] px-4 py-1 text-sm font-medium text-[#667085]'>
+                      <div className='mt-2 flex flex-wrap gap-2'>
+                        <span className='rounded-full bg-[#f5f7fb] px-3 py-1 text-xs font-medium text-[#667085]'>
                           {item.type}
                         </span>
 
-                        <span className='rounded-full bg-[#f5f7fb] px-4 py-1 text-sm font-medium text-[#667085]'>
+                        <span className='rounded-full bg-[#f5f7fb] px-3 py-1 text-xs font-medium text-[#667085]'>
                           {item.work_mode}
                         </span>
 
-                        <span className='rounded-full bg-[#f5f7fb] px-4 py-1 text-sm font-medium text-[#667085]'>
+                        <span className='rounded-full bg-[#f5f7fb] px-3 py-1 text-xs font-medium text-[#667085]'>
                           {item.experience}
                         </span>
                       </div>
@@ -290,8 +290,8 @@ export default function SavedPage() {
 
                   {/* Right */}
 
-                  <div className='flex items-center gap-5'>
-                    <p className='text-sm text-[#667085]'>
+                  <div className='flex items-center gap-3'>
+                    <p className='text-xs text-[#667085]'>
                       Saved on{' '}
                       {item.saved_date}
                     </p>
@@ -304,7 +304,7 @@ export default function SavedPage() {
                       }
                       className='transition hover:scale-105'
                     >
-                      <Bookmark className='h-6 w-6 fill-[#2563eb] text-[#2563eb]' />
+                      <Bookmark className='h-5 w-5 fill-[#2563eb] text-[#2563eb]' />
                     </button>
                   </div>
                 </div>
@@ -315,7 +315,7 @@ export default function SavedPage() {
           {/* Pagination */}
 
           {totalPages > 1 && (
-            <div className='flex items-center justify-center gap-4 border-t border-[#edf1f7] px-6 py-5'>
+            <div className='flex items-center justify-center gap-3 border-t border-[#edf1f7] px-4 py-3'>
               <button
                 onClick={() =>
                   setCurrentPage((prev) =>
@@ -323,7 +323,7 @@ export default function SavedPage() {
                   )
                 }
                 disabled={currentPage === 1}
-                className={`flex h-10 w-10 items-center justify-center rounded-xl border transition ${
+                className={`flex h-8 w-8 items-center justify-center rounded-lg border transition ${
                   currentPage === 1
                     ? 'cursor-not-allowed opacity-40'
                     : 'hover:bg-[#f5f7fb]'

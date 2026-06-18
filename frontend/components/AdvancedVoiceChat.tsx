@@ -245,7 +245,7 @@ export function AdvancedVoiceChat({ onBack }: { onBack: () => void }) {
           display: flex; flex-direction: column;
           background: #080C14;
           font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-          border-radius: 32px;
+          border-radius: 24px;
           overflow: hidden;
         }
         .avc-root::before {
@@ -262,12 +262,12 @@ export function AdvancedVoiceChat({ onBack }: { onBack: () => void }) {
         .avc-header {
           position: relative; z-index: 10;
           display: flex; justify-content: space-between; align-items: center;
-          padding: 18px 24px; border-bottom: 1px solid rgba(255,255,255,0.06);
+          padding: 14px 20px; border-bottom: 1px solid rgba(255,255,255,0.06);
           flex-shrink: 0;
         }
         .avc-back-btn {
           display: flex; align-items: center; justify-content: center;
-          width: 38px; height: 38px; border-radius: 11px;
+          width: 34px; height: 34px; border-radius: 11px;
           background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
           color: rgba(255,255,255,0.5); cursor: pointer; transition: all 0.2s;
         }
@@ -292,8 +292,8 @@ export function AdvancedVoiceChat({ onBack }: { onBack: () => void }) {
         }
 
         /* Orb */
-        .avc-orb-wrap { position: relative; width: 140px; height: 140px; margin-bottom: 32px; flex-shrink: 0; }
-        .avc-orb-ring { position: absolute; inset: -18px; border-radius: 50%; border: 1px solid transparent; transition: all 0.6s ease; }
+        .avc-orb-wrap { position: relative; width: 110px; height: 110px; margin-bottom: 20px; flex-shrink: 0; }
+        .avc-orb-ring { position: absolute; inset: -14px; border-radius: 50%; border: 1px solid transparent; transition: all 0.6s ease; }
         .avc-orb-ring-listening  { border-color: rgba(52,211,153,0.28); animation: avc-spin 4s linear infinite; }
         .avc-orb-ring-speaking   { border-color: rgba(99,102,241,0.28); animation: avc-spin 3s linear infinite reverse; }
         .avc-orb-ring-processing { border-color: rgba(251,191,36,0.22); animation: avc-spin 2s linear infinite; }
@@ -301,7 +301,7 @@ export function AdvancedVoiceChat({ onBack }: { onBack: () => void }) {
         @keyframes avc-spin { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
 
         .avc-orb {
-          width: 140px; height: 140px; border-radius: 50%;
+          width: 110px; height: 110px; border-radius: 50%;
           display: flex; align-items: center; justify-content: center;
           transition: all 0.5s ease; overflow: hidden;
         }
@@ -328,12 +328,12 @@ export function AdvancedVoiceChat({ onBack }: { onBack: () => void }) {
         .avc-dot:nth-child(2){animation-delay:.2s} .avc-dot:nth-child(3){animation-delay:.4s}
         @keyframes avc-dot-b { 0%,80%,100%{transform:scale(.6);opacity:.4} 40%{transform:scale(1);opacity:1} }
 
-        .avc-headline { font-size:24px; font-weight:500; color:rgba(255,255,255,.92); letter-spacing:-.02em; text-align:center; margin-bottom:8px; }
-        .avc-subline  { font-size:13px; color:rgba(255,255,255,.25); text-align:center; min-height:18px; }
+        .avc-headline { font-size:20px; font-weight:500; color:rgba(255,255,255,.92); letter-spacing:-.02em; text-align:center; margin-bottom:8px; }
+        .avc-subline  { font-size:12px; color:rgba(255,255,255,.25); text-align:center; min-height:18px; }
 
         /* Voice toggle */
-        .avc-voice-toggle { display:flex; margin-top:24px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.07); border-radius:13px; padding:4px; }
-        .avc-voice-btn { padding:7px 18px; border-radius:9px; font-size:13px; font-weight:500; cursor:pointer; transition:all .2s; color:rgba(255,255,255,.35); border:none; background:transparent; }
+        .avc-voice-toggle { display:flex; margin-top:18px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.07); border-radius:13px; padding:4px; }
+        .avc-voice-btn { padding:6px 14px; border-radius:9px; font-size:12px; font-weight:500; cursor:pointer; transition:all .2s; color:rgba(255,255,255,.35); border:none; background:transparent; }
         .avc-voice-btn:hover { color:rgba(255,255,255,.6); }
         .avc-voice-btn-female-active { background:linear-gradient(135deg,#ec4899,#be185d); color:white; box-shadow:0 2px 12px rgba(236,72,153,.35); }
         .avc-voice-btn-male-active   { background:linear-gradient(135deg,#6366f1,#4338ca); color:white; box-shadow:0 2px 12px rgba(99,102,241,.35); }
@@ -342,18 +342,18 @@ export function AdvancedVoiceChat({ onBack }: { onBack: () => void }) {
         .avc-footer { position:relative; z-index:10; padding:16px 24px 22px; display:flex; justify-content:center; flex-shrink:0; }
         .avc-start-btn {
           display:flex; align-items:center; gap:10px;
-          padding:14px 36px; border-radius:100px;
+          padding:11px 28px; border-radius:100px;
           background:linear-gradient(135deg,#6366f1,#8b5cf6); color:white;
-          font-size:15px; font-weight:600; cursor:pointer; border:none;
+          font-size:13px; font-weight:600; cursor:pointer; border:none;
           transition:all .2s;
           box-shadow:0 4px 24px rgba(99,102,241,.35), 0 1px 0 rgba(255,255,255,.1) inset;
         }
         .avc-start-btn:hover { transform:translateY(-1px); box-shadow:0 8px 32px rgba(99,102,241,.45), 0 1px 0 rgba(255,255,255,.1) inset; }
         .avc-end-btn {
           display:flex; align-items:center; gap:8px;
-          padding:12px 28px; border-radius:100px;
+          padding:10px 22px; border-radius:100px;
           background:rgba(239,68,68,.08); border:1px solid rgba(239,68,68,.2);
-          color:rgba(239,68,68,.75); font-size:14px; font-weight:500;
+          color:rgba(239,68,68,.75); font-size:13px; font-weight:500;
           cursor:pointer; transition:all .2s;
         }
         .avc-end-btn:hover { background:rgba(239,68,68,.14); border-color:rgba(239,68,68,.35); color:#ef4444; }
@@ -380,11 +380,11 @@ export function AdvancedVoiceChat({ onBack }: { onBack: () => void }) {
               {isListening ? (
                 <div className="avc-bars">{[1,2,3,4,5].map(i=><div key={i} className="avc-bar"/>)}</div>
               ) : isSpeaking ? (
-                <Volume2 size={40} color="rgba(165,180,252,0.9)" strokeWidth={1.5} />
+                <Volume2 size={30} color="rgba(165,180,252,0.9)" strokeWidth={1.5} />
               ) : isProcessing ? (
                 <div className="avc-dots"><div className="avc-dot"/><div className="avc-dot"/><div className="avc-dot"/></div>
               ) : (
-                <Bot size={40} color="rgba(255,255,255,0.15)" strokeWidth={1.5} />
+                <Bot size={30} color="rgba(255,255,255,0.15)" strokeWidth={1.5} />
               )}
             </div>
           </div>

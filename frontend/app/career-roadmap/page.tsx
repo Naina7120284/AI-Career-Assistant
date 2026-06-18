@@ -158,7 +158,7 @@ if (!isLoggedIn) {
     <div className='min-h-screen flex items-center justify-center bg-[#f8fafc] px-6'>
       <div className='w-full max-w-xl rounded-[28px] border border-[#edf1f7] bg-white p-8 shadow-sm text-center'>
 
-        <h1 className='text-3xl font-bold text-[#101828]'>
+        <h1 className='text-2xl font-bold text-[#101828]'>
           Career Roadmap
         </h1>
 
@@ -196,7 +196,7 @@ if (!isLoggedIn) {
 
         <div className='flex flex-col gap-4 md:flex-row md:items-center md:justify-between'>
           <div>
-            <h1 className='text-2xl font-bold text-[#0f172a] md:text-4xl'>
+            <h1 className='text-2xl font-bold text-[#0f172a] md:text-3xl'>
               Career Roadmap
             </h1>
 

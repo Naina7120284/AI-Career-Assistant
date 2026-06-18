@@ -123,22 +123,22 @@ const fetchLatestResume = async () => {
  
   // ── Overview ───────────────────────────────────────────────────────────────
   return (
-    <div className="max-w-7xl mx-auto space-y-10 pb-12">
+    <div className="max-w-6xl mx-auto space-y-7 pb-8">
  
       {/* ── HERO SECTION ── */}
-      <section className="relative overflow-hidden rounded-[42px] min-h-[470px] border border-white/40 shadow-[0_25px_80px_rgba(120,130,180,0.08)]">
+      <section className="relative overflow-hidden rounded-[28px] min-h-[380px] border border-white/40 shadow-[0_25px_80px_rgba(120,130,180,0.08)]">
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.60)_0%,rgba(255,255,255,0.18)_100%)] backdrop-blur-[1px]" />
         <div className="absolute top-[20px] right-[180px] w-[320px] h-[320px] bg-[#C5B7FF]/30 rounded-full blur-[90px] animate-pulse" />
         <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between px-8 lg:px-14 py-14 lg:py-10 min-h-[470px]">
           <div className="flex-1 max-w-2xl">
-            <h1 className="text-[28px] lg:text-[54px] font-[900] leading-[1] tracking-[-0.04em] text-transparent bg-clip-text bg-gradient-to-br from-[#7FAFFF] via-[#5F9CFF] to-[#3D84F5]">
+            <h1 className="text-[26px] lg:text-[36px] font-[900] leading-10 tracking-[-0.04em] text-transparent bg-clip-text bg-gradient-to-br from-[#7FAFFF] via-[#5F9CFF] to-[#3D84F5]">
               Your AI Partner<br />for a Better Career
             </h1>
-            <p className="mt-7 text-[17px] lg:text-[20px] text-[#64748B] leading-9 max-w-2xl">
+            <p className="mt-7 text-[15px] lg:text-[17px] text-[#64748B] leading-7 max-w-2xl">
               Get personalized guidance, expert insights, and AI-powered tools
               to help you plan, grow, and land your dream job.
             </p>
-            <div className="mt-10 flex flex-wrap gap-4">
+            <div className="mt-9 flex flex-wrap gap-4">
               <button onClick={() => router.push(isLoggedIn ? '/' : '/register')}
                 className="group relative overflow-hidden h-[54px] px-6 rounded-[18px] border border-[#FFE38A] bg-gradient-to-r from-[#FFE27A] via-[#FFD84D] to-[#FFEFB0] shadow-[0_10px_24px_rgba(255,215,90,0.18)] hover:scale-[1.01] transition-all">
                 <div className="relative z-10 flex items-center gap-2 font-[800] text-[#111827] text-[15px] tracking-[-0.01em]">
@@ -148,13 +148,13 @@ const fetchLatestResume = async () => {
               </button>
             </div>
           </div>
-          <div className="relative w-full lg:w-[520px] h-[420px] mt-14 lg:mt-0 flex items-center justify-center">
+          <div className="relative w-full lg:w-[430px] h-[340px] mt-14 lg:mt-0 flex items-center justify-center">
             <div className="absolute w-[340px] h-[340px] bg-[#C7B7FF]/40 rounded-full blur-[80px] animate-pulse" />
-            <img src="/bot.png" alt="AI Robot" className="relative z-20 w-[390px] lg:w-[430px] object-contain drop-shadow-[0_35px_60px_rgba(90,90,180,0.30)] animate-float" />
+            <img src="/bot.png" alt="AI Robot" className="relative z-20 w-[300px] lg:w-[340px] object-contain drop-shadow-[0_35px_60px_rgba(90,90,180,0.30)] animate-float" />
             <div className="absolute top-10 right-6 bg-white/75 backdrop-blur-xl p-4 rounded-[22px] shadow-xl border border-white/70 z-30 animate-bounce">
               <div className="bg-[#EEF2FF] p-3 rounded-2xl"><Briefcase className="text-[#5B5CF0]" size={22} /></div>
             </div>
-            <div className="absolute top-1/2 -right-2 -translate-y-1/2 bg-white/75 backdrop-blur-xl p-4 rounded-[22px] shadow-xl border border-white/70 z-30 animate-pulse">
+            <div className="absolute top-1/2 -right-2 -translate-y-1/2 bg-white/75 backdrop-blur-xl p-3 rounded-[16px] shadow-xl border border-white/70 z-30 animate-pulse">
               <div className="bg-[#F3E8FF] p-3 rounded-2xl"><TrendingUp className="text-[#7C3AED]" size={22} /></div>
             </div>
             <div className="absolute bottom-10 right-8 bg-white/75 backdrop-blur-xl p-4 rounded-[22px] shadow-xl border border-white/70 z-30 animate-bounce">
@@ -165,7 +165,7 @@ const fetchLatestResume = async () => {
       </section>
       
       {/* ── DASHBOARD GRID ── */}
-      <div className="grid grid-cols-12 gap-6 lg:gap-8">
+      <div className="grid grid-cols-12 gap-4 lg:gap-5">
  
         {/* LEFT COLUMN */}
         <div className="col-span-12 lg:col-span-8 space-y-6">
@@ -177,12 +177,12 @@ const fetchLatestResume = async () => {
           </div>
  
           {!resumeData ? (
-            <div className="bg-white/50 backdrop-blur-sm border-4 border-dashed border-slate-200 rounded-[36px] p-10 lg:p-16">
+            <div className="bg-white/50 backdrop-blur-sm border-4 border-dashed border-slate-200 rounded-[24px] p-6 lg:p-8">
               <ResumeUploader onUploadComplete={(data) => { setResumeData(data); setHasResume(true); }} />
             </div>
           ) : (
             <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
-              <div className="bg-white rounded-[36px] p-6 lg:p-8 border border-slate-100 shadow-xl shadow-slate-200/40">
+              <div className="bg-white rounded-[24px] p-5 lg:p-6 border border-slate-100 shadow-xl shadow-slate-200/40">
                 <header className="mb-6">
                   <h1 className="text-2xl font-bold text-slate-800">
                     Welcome back, {resumeData.name || 'there'}
@@ -252,7 +252,7 @@ const fetchLatestResume = async () => {
         <div className="col-span-12 lg:col-span-4 space-y-6">
           
           {/* Career Snapshot - Blurred for non-logged-in users */}
-          <div className="bg-white rounded-[36px] p-6 lg:p-8 border border-slate-100 shadow-xl shadow-slate-200/40">
+          <div className="bg-white rounded-[24px] p-5 lg:p-6 border border-slate-100 shadow-xl shadow-slate-200/40">
             <div className="flex justify-between items-center mb-6">
               <h3 className="font-extrabold text-slate-800 text-lg">Career Snapshot</h3>
               <TrendingUp size={18} className="text-indigo-600" />
@@ -334,7 +334,7 @@ const fetchLatestResume = async () => {
                 <div className="filter blur-[6px] opacity-60 pointer-events-none select-none">
                   {/* Blurred ATS Circle */}
                   <div className="flex justify-center mb-6">
-                    <div className="relative w-36 h-36 sm:w-40 sm:h-40">
+                    <div className="relative w-28 h-28 sm:w-32sm:h-32">
                       <svg className="w-full h-full transform -rotate-90">
                         <circle cx="80" cy="80" r="68" stroke="currentColor" strokeWidth="10" fill="transparent" className="text-slate-100" />
                         <circle cx="80" cy="80" r="68" stroke="currentColor" strokeWidth="10" fill="transparent" strokeDasharray="427" strokeDashoffset="85" strokeLinecap="round" className="text-indigo-600" />
@@ -368,7 +368,7 @@ const fetchLatestResume = async () => {
           </div>
           
           {/* AI Recommendations - Blurred for non-logged-in users */}
-          <div className="bg-gradient-to-br from-indigo-900 to-indigo-800 rounded-[36px] p-6 lg:p-8 text-white shadow-2xl shadow-indigo-200/50 relative overflow-hidden">
+          <div className="bg-gradient-to-br from-indigo-900 to-indigo-800 rounded-[24px] p-5 lg:p-6 text-white shadow-2xl shadow-indigo-200/50 relative overflow-hidden">
             <div className="absolute top-0 right-0 p-4 opacity-5">
               <Lightbulb size={120} />
             </div>
@@ -441,11 +441,11 @@ function ActionCard({ icon, title, desc, onClick, color }: {
     emerald: 'hover:bg-emerald-50/50 hover:border-emerald-200',
   };
   return (
-    <div onClick={onClick} className={`group bg-white p-8 rounded-[32px] border border-slate-100 transition-all duration-300 cursor-pointer hover:-translate-y-1 hover:shadow-xl ${colorMap[color]}`}>
-      <div className="w-12 h-12 bg-slate-50 rounded-[18px] flex items-center justify-center mb-6 group-hover:scale-110 transition-all">
+    <div onClick={onClick} className={`group bg-white p-5 rounded-[20px] border border-slate-100 transition-all duration-300 cursor-pointer hover:-translate-y-1 hover:shadow-xl ${colorMap[color]}`}>
+      <div className="w-10 h-10 bg-slate-50 rounded-[18px] flex items-center justify-center mb-6 group-hover:scale-110 transition-all">
         {icon}
       </div>
-      <h3 className="text-lg font-bold text-slate-800 mb-2">{title}</h3>
+      <h3 className="text-base font-bold text-slate-800 mb-2">{title}</h3>
       <p className="text-slate-500 text-sm leading-relaxed mb-4">{desc}</p>
       <div className="flex items-center text-indigo-600 font-bold text-xs gap-1.5">
         EXPLORE TOOL <ChevronRight size={13} />

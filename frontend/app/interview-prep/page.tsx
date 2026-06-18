@@ -328,7 +328,7 @@ export default function InterviewPrepPage() {
         : 'Common questions'
 
   return (
-    <div className="min-h-screen bg-[#f6f8fc] px-6 py-8">
+    <div className="min-h-screen bg-[#f6f8fc] px-4 py-5">
       <div className="mx-auto max-w-7xl">
         {modalOpen && (
           <div
@@ -337,7 +337,7 @@ export default function InterviewPrepPage() {
             aria-modal="true"
             aria-labelledby="interview-modal-title"
           >
-            <div className="w-full max-w-md rounded-[28px] border border-[#e9edf5] bg-white p-6 shadow-xl">
+            <div className="w-full max-w-md rounded-[20px] border border-[#e9edf5] bg-white p-5 shadow-xl">
               <div className="flex items-start justify-between gap-4">
                 <h2
                   id="interview-modal-title"
@@ -403,15 +403,15 @@ export default function InterviewPrepPage() {
         )}
 
         {!userLoading && !isLoggedIn && (
-          <div className="mb-8 rounded-[28px] border border-[#e9edf5] bg-white p-7 shadow-sm">
-            <h2 className="text-2xl font-bold text-[#101828]">Please log in</h2>
+          <div className="mb-8 rounded-[20px] border border-[#e9edf5] bg-white p-5 shadow-sm">
+            <h2 className="text-xl font-bold text-[#101828]">Please log in</h2>
             <p className="mt-2 text-[#667085]">
               Interview Prep saves sessions to your account (or this device if
               the database table is missing).
             </p>
             <a
               href="/login?next=/interview-prep"
-              className="mt-5 inline-flex h-12 items-center justify-center rounded-2xl bg-[#f6c744] px-6 font-semibold text-black hover:opacity-90"
+              className="mt-5 inline-flex h-10 items-center justify-center rounded-x text-sm bg-[#f6c744] px-6 font-semibold text-black hover:opacity-90"
             >
               Go to Login
             </a>
@@ -442,17 +442,17 @@ export default function InterviewPrepPage() {
         )}
 
         <div className="mb-8">
-          <h1 className="text-5xl font-bold text-[#101828]">
+          <h1 className="text-3xl md:text-3xl font-bold text-[#101828]">
             Interview Preparation
           </h1>
-          <p className="mt-3 text-lg text-[#667085]">
+          <p className="mt-2 text-sm md:text-base text-[#667085]">
             Practice mock interviews in Career Chat, or drill questions and
             behavioral prompts here with AI feedback.
           </p>
         </div>
 
-        <div className="rounded-[34px] border border-[#e9edf5] bg-white p-7 shadow-sm">
-          <h2 className="mb-7 text-3xl font-bold text-[#101828]">
+        <div className="rounded-[24px] border border-[#e9edf5] bg-white p-5 shadow-sm">
+          <h2 className="mb-7 text-2xl font-bold text-[#101828]">
             Choose a Practice Mode
           </h2>
 
@@ -461,7 +461,7 @@ export default function InterviewPrepPage() {
               type="button"
               disabled={!isLoggedIn || userLoading}
               onClick={() => openStartModal('mock')}
-              className="group flex items-center gap-5 rounded-[28px] border border-[#dfe4ff] bg-white p-8 text-left transition-all duration-300 hover:-translate-y-1 hover:shadow-lg disabled:pointer-events-none disabled:opacity-50"
+              className="group flex items-center gap-5 rounded-[20px] border border-[#dfe4ff] bg-white p-6 text-left transition-all duration-300 hover:-translate-y-1 hover:shadow-lg disabled:pointer-events-none disabled:opacity-50"
             >
               <div className="flex h-20 w-20 items-center justify-center rounded-[24px] bg-[#eef2ff]">
                 <ClipboardCheck size={34} className="text-[#4f6cff]" />
@@ -470,7 +470,7 @@ export default function InterviewPrepPage() {
                 <h3 className="text-2xl font-bold text-[#101828]">
                   Mock Interview
                 </h3>
-                <p className="mt-2 text-lg leading-relaxed text-[#667085]">
+                <p className="mt-2 text-sm leading-relaxed text-[#667085]">
                   Back-and-forth text interview in Career Chat (AI asks, you
                   answer).
                 </p>
@@ -481,7 +481,7 @@ export default function InterviewPrepPage() {
               type="button"
               disabled={!isLoggedIn || userLoading}
               onClick={() => openStartModal('questions')}
-              className="group flex items-center gap-5 rounded-[28px] border border-[#f4d58d] bg-white p-8 text-left transition-all duration-300 hover:-translate-y-1 hover:shadow-lg disabled:pointer-events-none disabled:opacity-50"
+              className="group flex items-center gap-5 rounded-[20px] border border-[#f4d58d] bg-white p-6 text-left transition-all duration-300 hover:-translate-y-1 hover:shadow-lg disabled:pointer-events-none disabled:opacity-50"
             >
               <div className="flex h-20 w-20 items-center justify-center rounded-[24px] bg-[#fff7e6]">
                 <MessageSquareText size={34} className="text-[#f0a500]" />
@@ -490,7 +490,7 @@ export default function InterviewPrepPage() {
                 <h3 className="text-2xl font-bold text-[#101828]">
                   Common Questions
                 </h3>
-                <p className="mt-2 text-lg leading-relaxed text-[#667085]">
+                <p className="mt-2 text-sm leading-relaxed text-[#667085]">
                   One question at a time with optional written answer feedback.
                 </p>
               </div>
@@ -500,7 +500,7 @@ export default function InterviewPrepPage() {
               type="button"
               disabled={!isLoggedIn || userLoading}
               onClick={() => openStartModal('behavioral')}
-              className="group flex items-center gap-5 rounded-[28px] border border-[#d8f0d2] bg-white p-8 text-left transition-all duration-300 hover:-translate-y-1 hover:shadow-lg disabled:pointer-events-none disabled:opacity-50"
+              className="group flex items-center gap-5 rounded-[20px] border border-[#d8f0d2] bg-white p-5 text-left transition-all duration-300 hover:-translate-y-1 hover:shadow-lg disabled:pointer-events-none disabled:opacity-50"
             >
               <div className="flex h-20 w-20 items-center justify-center rounded-[24px] bg-[#effbea]">
                 <Briefcase size={34} className="text-[#65b84b]" />
@@ -509,7 +509,7 @@ export default function InterviewPrepPage() {
                 <h3 className="text-2xl font-bold text-[#101828]">
                   Behavioral Questions
                 </h3>
-                <p className="mt-2 text-lg leading-relaxed text-[#667085]">
+                <p className="mt-2 text-sm leading-relaxed text-[#667085]">
                   STAR-style prompts and coaching on your draft answers.
                 </p>
               </div>
@@ -518,7 +518,7 @@ export default function InterviewPrepPage() {
         </div>
 
         {activePractice && isLoggedIn && (
-          <div className="mt-8 rounded-[34px] border border-[#e9edf5] bg-white p-7 shadow-sm">
+          <div className="mt-8 rounded-[24px] border border-[#e9edf5] bg-white p-5 shadow-sm">
             <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
               <div>
                 <h2 className="text-2xl font-bold text-[#101828]">
@@ -597,9 +597,9 @@ export default function InterviewPrepPage() {
           </div>
         )}
 
-        <div className="mt-8 rounded-[34px] border border-[#e9edf5] bg-white p-7 shadow-sm">
+        <div className="mt-8 rounded-[24px] border border-[#e9edf5] bg-white p-5 shadow-sm">
           <div className="mb-7 flex items-center justify-between">
-            <h2 className="text-3xl font-bold text-[#101828]">
+            <h2 className="text-2xl font-bold text-[#101828]">
               Your Recent Sessions
             </h2>
             <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f5f7fb]">
@@ -612,11 +612,11 @@ export default function InterviewPrepPage() {
               <div className="h-12 w-12 animate-spin rounded-full border-4 border-[#e5e7eb] border-t-[#4f6cff]" />
             </div>
           ) : !isLoggedIn ? (
-            <div className="flex h-[200px] flex-col items-center justify-center rounded-[28px] border border-dashed border-[#d0d5dd] bg-[#fafbfc] text-[#667085]">
+            <div className="flex h-[200px] flex-col items-center justify-center rounded-[20px] border border-dashed border-[#d0d5dd] bg-[#fafbfc] text-[#667085]">
               Log in to see saved sessions.
             </div>
           ) : sessions.length === 0 ? (
-            <div className="flex h-[250px] flex-col items-center justify-center rounded-[28px] border border-dashed border-[#d0d5dd] bg-[#fafbfc]">
+            <div className="flex h-[250px] flex-col items-center justify-center rounded-[20px] border border-dashed border-[#d0d5dd] bg-[#fafbfc]">
               <Sparkles size={45} className="mb-4 text-[#4f6cff]" />
               <h3 className="text-2xl font-semibold text-[#101828]">
                 No interview sessions yet
@@ -630,14 +630,14 @@ export default function InterviewPrepPage() {
               {sessions.map((session) => (
                 <div
                   key={session.id}
-                  className="flex items-center justify-between rounded-[28px] border border-[#edf1f7] bg-white px-6 py-6 shadow-sm transition-all duration-300 hover:shadow-md"
+                  className="flex items-center justify-between rounded-[20px] border border-[#edf1f7] bg-white px-6 py-6 shadow-sm transition-all duration-300 hover:shadow-md"
                 >
                   <div className="flex items-center gap-5">
                     <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#eef2ff]">
                       <Sparkles size={28} className="text-[#4f6cff]" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-[#101828]">
+                      <h3 className="text-xl font-bold text-[#101828]">
                         {session.role}
                       </h3>
                       <div className="mt-1 flex flex-wrap items-center gap-2 text-[#667085]">

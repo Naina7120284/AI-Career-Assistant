@@ -169,7 +169,7 @@ export default function ResumeReviewPage() {
 
     return (
 
-      <div className="p-10 text-lg text-slate-500">
+      <div className="p-6 text-sm text-slate-500">
 
         Loading...
 
@@ -182,16 +182,16 @@ export default function ResumeReviewPage() {
   // =========================
   return (
 
-    <div className="max-w-7xl mx-auto space-y-8 pb-12">
+    <div className="max-w-6xl mx-auto space-y-6 pb-8">
 
       {/* HEADER */}
       <div>
 
-        <h1 className="text-4xl font-black text-[#111827]">
+        <h1 className="text-3xl font-bold text-[#111827]">
           Resume Review
         </h1>
 
-        <p className="text-slate-500 mt-2">
+        <p className="text-slate-500 text-14 mt-1">
           Upload your resume and get AI-powered ATS analysis
         </p>
 
@@ -202,7 +202,7 @@ export default function ResumeReviewPage() {
       {/* ===================== */}
       {!resumeData && (
 
-        <div className="bg-white/50 backdrop-blur-sm border-4 border-dashed border-slate-200 rounded-[36px] p-10 lg:p-16">
+        <div className="bg-white/50 backdrop-blur-sm border-2 border-dashed border-slate-200 rounded-[24px] p-5 lg:p-7">
 
           <ResumeUploader
             onUploadComplete={
@@ -218,17 +218,17 @@ export default function ResumeReviewPage() {
       {/* ===================== */}
       {resumeData && (
 
-        <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
+        <div className="space-y-4 animate-in fade-in slide-in-from-bottom-4 duration-700">
 
-          <div className="bg-white rounded-[36px] p-6 lg:p-8 border border-slate-100 shadow-xl shadow-slate-200/40">
+          <div className="bg-white rounded-[24px] p-5 lg:p-6 border border-slate-100 shadow-lg shadow-slate-200/40">
 
-            <header className="mb-6">
+            <header className="mb-5">
 
-              <h2 className="text-2xl font-bold text-slate-800">
+              <h2 className="text-xl font-bold text-slate-800">
                 Resume Analysis Results
               </h2>
 
-              <p className="text-slate-500 text-sm mt-1">
+              <p className="text-slate-500 text-[13px] mt-1">
                 Here are your AI-powered insights.
               </p>
 
@@ -240,7 +240,7 @@ export default function ResumeReviewPage() {
             />
 
             {/* ACTIONS */}
-            <div className="mt-6">
+            <div className="mt-4">
 
               <button
 
@@ -252,7 +252,7 @@ export default function ResumeReviewPage() {
 
                 }}
 
-                className="text-slate-500 text-sm hover:text-slate-700 transition-colors"
+                className="text-slate-500  hover:text-[13px] text-slate-700 transition-colors"
               >
 
                 Upload another resume

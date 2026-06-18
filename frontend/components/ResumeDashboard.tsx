@@ -25,28 +25,28 @@ export function ResumeDashboard({ data }: { data: any }) {
 
   return (
 
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 animate-in fade-in slide-in-from-bottom-4 duration-700">
 
       {/* ========================= */}
       {/* ATS SCORECARD */}
       {/* ========================= */}
-      <div className="lg:col-span-1 bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+      <div className="lg:col-span-1 bg-white p-5 rounded-xl shadow-sm border border-slate-100">
 
-        <h3 className="font-bold mb-4">
+        <h3 className="font-semibold text-[15px] mb-3">
           ATS Scorecard
         </h3>
 
         <div className="flex flex-col items-center justify-center p-4">
 
-          <div className="relative w-32 h-32 flex items-center justify-center rounded-full border-8 border-indigo-600">
+          <div className="relative w-24 h-24 flex items-center justify-center rounded-full border-6 border-indigo-600">
 
-            <span className="text-3xl font-bold">
+            <span className="text-2xl font-bold">
               {displayScore}%
             </span>
 
           </div>
 
-          <p className="mt-4 text-sm text-slate-500 text-center leading-relaxed">
+          <p className="mt-3 text-[13px] text-slate-500 text-center leading-relaxed">
 
             {getATSMessage(displayScore)}
 
@@ -59,14 +59,14 @@ export function ResumeDashboard({ data }: { data: any }) {
       {/* ========================= */}
       {/* RIGHT SIDE */}
       {/* ========================= */}
-      <div className="lg:col-span-2 space-y-6">
+      <div className="lg:col-span-2 space-y-5">
 
         {/* ========================= */}
         {/* SKILLS */}
         {/* ========================= */}
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+        <div className="bg-white p-5 rounded-xl shadow-sm border border-slate-100">
 
-          <h3 className="font-bold mb-4 text-indigo-600">
+          <h3 className="font-semibold text-[15px] mb-3 text-indigo-600">
             Extracted Skills
           </h3>
 
@@ -82,7 +82,7 @@ export function ResumeDashboard({ data }: { data: any }) {
 
                   <span
                     key={`${skill}-${index}`}
-                    className="px-3 py-1 bg-indigo-50 text-indigo-700 rounded-full text-sm font-medium"
+                    className="px-2.5 py-1 bg-indigo-50 text-indigo-700 rounded-full text-sm font-medium"
                   >
                     {skill}
                   </span>
@@ -91,7 +91,7 @@ export function ResumeDashboard({ data }: { data: any }) {
 
             ) : (
 
-              <p className="text-slate-400 italic text-sm">
+              <p className="text-slate-400 italic text-xs">
                 No skills detected yet...
               </p>
 
@@ -104,13 +104,13 @@ export function ResumeDashboard({ data }: { data: any }) {
         {/* ========================= */}
         {/* RECOMMENDED ROLES */}
         {/* ========================= */}
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+        <div className="bg-white p-5 rounded-xl shadow-sm border border-slate-100">
 
-          <h3 className="font-bold mb-2">
+          <h3 className="font-semibold text-[15px] mb-2">
             Recommended Roles
           </h3>
 
-          <ul className="space-y-2 text-sm text-slate-600">
+          <ul className="space-y-1.5 text-[13px] text-slate-600">
 
             {data.recommendations?.length > 0 ? (
 

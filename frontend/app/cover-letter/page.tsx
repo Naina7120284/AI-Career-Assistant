@@ -123,14 +123,14 @@ export default function CoverLetterPage() {
   if (!isLoggedIn) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-[#f6f8fc] px-6">
-        <div className="w-full max-w-xl rounded-[28px] border border-[#e9edf5] bg-white p-8 shadow-sm text-center">
-          <h1 className="text-3xl font-bold text-[#101828]">Cover Letter</h1>
-          <p className="mt-3 text-[#667085]">
+        <div className="w-full max-w-lg rounded-[20px] border border-[#e9edf5] bg-white p-6 shadow-sm text-center">
+          <h1 className="text-2xl font-bold text-[#101828]">Cover Letter</h1>
+          <p className="mt-2 text-[#667085]">
             Please log in to generate and save cover letters.
           </p>
           <a
             href="/login?next=/cover-letter"
-            className="inline-flex mt-6 h-12 items-center justify-center rounded-2xl bg-[#f6c744] px-6 font-semibold text-black hover:opacity-90"
+            className="inline-flex mt-6 h-10 items-center justify-center rounded-xl bg-[#f6c744] px-5 text-sm font-semibold text-black hover:opacity-90"
           >
             Go to Login
           </a>
@@ -140,20 +140,20 @@ export default function CoverLetterPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-indigo-50 to-slate-50 p-4 sm:p-6 lg:p-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-indigo-50 to-slate-50 p-3 sm:p-4 lg:p-5">
       {/* HEADER */}
       <div className="mb-8">
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+        <h1 className="text-2xl sm:text-4xl font-bold text-slate-900 tracking-tight">
           Cover Letter
         </h1>
 
-        <p className="mt-3 text-slate-600 text-sm sm:text-base">
+        <p className="mt-2 text-slate-600 text-sm sm:text-base">
           Create a professional cover letter tailored to your dream job.
         </p>
       </div>
 
       {/* MAIN GRID */}
-      <div className="grid grid-cols-1 xl:grid-cols-[1.2fr_0.9fr] gap-6 items-start">
+      <div className="grid grid-cols-1 xl:grid-cols-[1.2fr_0.9fr] gap-4 items-start">
         {infoBanner && (
           <div
             style={{
@@ -184,14 +184,14 @@ export default function CoverLetterPage() {
         )}
         {/* LEFT */}
         <div
-          className="bg-white/90 backdrop-blur-xl rounded-3xl p-5 sm:p-8 border border-white/70 shadow-xl"
+          className="bg-white/90 backdrop-blur-xl rounded-2xl p-4 sm:p-6 border border-white/70 shadow-lg"
         >
           <h2
             style={{
-              fontSize: '1.8rem',
+              fontSize: '1.4rem',
               fontWeight: 700,
               color: '#0f172a',
-              marginBottom: '2rem',
+              marginBottom: '1.25rem',
             }}
           >
             Create New Cover Letter
@@ -202,7 +202,7 @@ export default function CoverLetterPage() {
             <label
               style={{
                 display: 'block',
-                marginBottom: '0.7rem',
+                marginBottom: '0.4rem',
                 fontWeight: 600,
                 color: '#0f172a',
               }}
@@ -217,8 +217,8 @@ export default function CoverLetterPage() {
               placeholder="e.g. Senior Product Manager"
               style={{
                 width: '100%',
-                padding: '1rem 1.1rem',
-                borderRadius: '18px',
+                padding: '0.75rem 0.9rem',
+                borderRadius: '12px',
                 border: '1px solid #e2e8f0',
                 fontSize: '1rem',
                 outline: 'none',
@@ -248,8 +248,8 @@ export default function CoverLetterPage() {
               placeholder="e.g. Google"
               style={{
                 width: '100%',
-                padding: '1rem 1.1rem',
-                borderRadius: '18px',
+                padding: '0.75rem 0.9rem',
+                borderRadius: '12px',
                 border: '1px solid #e2e8f0',
                 fontSize: '1rem',
                 outline: 'none',
@@ -276,11 +276,11 @@ export default function CoverLetterPage() {
               value={jobDescription}
               onChange={(e) => setJobDescription(e.target.value)}
               placeholder="Paste job description here..."
-              rows={6}
+              rows={5}
               style={{
                 width: '100%',
-                padding: '1rem 1.1rem',
-                borderRadius: '18px',
+                padding: '0.75rem 0.9rem',
+                borderRadius: '12px',
                 border: '1px solid #e2e8f0',
                 fontSize: '16px',
                 outline: 'none',
@@ -309,8 +309,8 @@ export default function CoverLetterPage() {
               onChange={(e) => setTone(e.target.value)}
               style={{
                 width: '100%',
-                padding: '1rem 1.1rem',
-                borderRadius: '18px',
+                padding: '0.75rem 0.9rem',
+                borderRadius: '12px',
                 border: '1px solid #e2e8f0',
                 fontSize: '1rem',
                 outline: 'none',
@@ -356,7 +356,7 @@ export default function CoverLetterPage() {
         >
           {/* HISTORY */}
           <div
-            className="bg-white/90 backdrop-blur-xl rounded-3xl p-5 sm:p-8 border border-white/70 shadow-xl"
+            className="bg-white/90 backdrop-blur-xl rounded-2xl p-4 sm:p-6 border border-white/70 shadow-lg"
           >
             <div
               style={{
@@ -368,7 +368,7 @@ export default function CoverLetterPage() {
             >
               <h2
                 style={{
-                  fontSize: '1.6rem',
+                  fontSize: '1.25rem',
                   fontWeight: 700,
                   color: '#0f172a',
                 }}
@@ -389,8 +389,8 @@ export default function CoverLetterPage() {
               {coverLetters.length === 0 && (
                 <div
                   style={{
-                    padding: '1.5rem',
-                    borderRadius: '20px',
+                    padding: '1rem',
+                    borderRadius: '12px',
                     background: '#f8fafc',
                     color: '#64748b',
                     textAlign: 'center',
@@ -408,8 +408,8 @@ export default function CoverLetterPage() {
                   }
                   style={{
                     background: '#fff',
-                    borderRadius: '22px',
-                    padding: '1.3rem',
+                    borderRadius: '14px',
+                    padding: '1rem',
                     border: '1px solid #e2e8f0',
                     cursor: 'pointer',
                     transition: '0.2s',
@@ -453,13 +453,13 @@ export default function CoverLetterPage() {
           {/* GENERATED LETTER */}
           {generatedLetter && (
             <div
-              className="bg-white rounded-3xl p-5 sm:p-8 border border-slate-200 shadow-xl"
+              className="bg-white rounded-2xl p-4 sm:p-6 border border-slate-200 shadow-lg"
             >
               <h2
                 style={{
-                  fontSize: '1.5rem',
+                  fontSize: '1.2rem',
                   fontWeight: 700,
-                  marginBottom: '1.5rem',
+                  marginBottom: '1rem',
                   color: '#0f172a',
                 }}
               >
@@ -469,9 +469,9 @@ export default function CoverLetterPage() {
               <div
                 style={{
                   whiteSpace: 'pre-wrap',
-                  lineHeight: '1.9',
+                  lineHeight: '1.7',
                   color: '#334155',
-                  fontSize: '1rem',
+                  fontSize: '0.95rem',
                 }}
               >
                 {generatedLetter}
