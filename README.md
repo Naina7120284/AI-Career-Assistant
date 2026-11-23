@@ -31,15 +31,14 @@ Next.js 16 (React 19, TypeScript, Tailwind)  ──►  FastAPI backend (Python)
                                     LLM: Groq API (Llama 3.1)
 ```
 
-`backend/app/services/embedding.py` and `matching.py` contain an embedding-based retrieval module
-(OpenAI `text-embedding-3-small` + a Supabase vector-match function). It is not yet wired into the
-chat routes; today the chat passes the stored résumé text directly as context.
+The career chat grounds its answers in the user's own résumé: the stored résumé text is passed to the
+model as context on every question, so advice is specific to that person.
 
 ## Tech stack
 
 **Frontend:** Next.js 16 · React 19 · TypeScript · Tailwind CSS · react-markdown
 **Backend:** Python · FastAPI · Uvicorn · WebSockets · pdfplumber · Edge TTS
-**Data & AI:** Supabase (Postgres, Auth) · Groq API (Llama 3.1) · OpenAI embeddings (retrieval module)
+**Data & AI:** Supabase (Postgres, Auth) · Groq API (Llama 3.1)
 
 ## Run locally
 
@@ -49,7 +48,7 @@ chat routes; today the chat passes the stored résumé text directly as context.
 cd backend
 python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
-# create backend/.env with: SUPABASE_URL, SUPABASE_KEY, GROQ_API_KEY (and OPENAI_API_KEY for the retrieval module)
+# create backend/.env with: SUPABASE_URL, SUPABASE_KEY, GROQ_API_KEY
 uvicorn app.main:app --reload --port 8001
 ```
 
